@@ -19,9 +19,9 @@ function Darkmode() {
         <button
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             className="
-        px-4
+        px-2
         py-2
-        rounded-full
+        rounded-2xl
         border
         border-gray-300
         dark:border-gray-600

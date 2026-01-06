@@ -1,5 +1,71 @@
 {
-    "product":[
-        
-    ]
+  "religious": [
+    {
+      "id": 1,
+      "title": "The Holy Quran",
+      "img": "/images/quran.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Bhagavad Gita",
+      "img": "/images/bhagavad-gita.jpg"
+    },
+    {
+      "id": 3,
+      "title": "The Holy Bible",
+      "img": "/images/bible.jpg"
+    }
+  ],
+  "fiction": [
+    {
+      "id": 1,
+      "title": "To Kill a Mockingbird",
+      "img": "/images/fic1.jpg",
+      "author": "Harper Lee",
+      "description": "A powerful classic about racial injustice in the American South, seen through a young girl’s eyes. It explores morality, compassion, and empathy."
+    },
+    {
+      "id": 2,
+      "title": "1984",
+      "img": "/images/fic2.jpg",
+      "author": "George Orwell",
+      "description": "A chilling dystopian novel depicting life under an oppressive regime that monitors every move and controls truth itself."
+    },
+    {
+      "id": 3,
+      "title": "The Great Gatsby",
+      "img": "/images/fic3.jpg",
+      "author": "F. Scott Fitzgerald",
+      "description": "A tragic story of love, wealth, and idealism in 1920s America, centering on the elusive Jay Gatsby."
+    },
+    {
+      "id": 4,
+      "title": "Harry Potter and the Sorcerer’s Stone",
+      "img": "/images/fic4.jpg",
+      "author": "J.K. Rowling",
+      "description": "The first in the magical series about a young wizard discovering his destiny at Hogwarts — perfect for all ages."
+    }
+  ],
+   "hero":[
+  {
+    "id": 1,
+    "img": "/hero/image1.webp",
+    "title": "upto 50% off on all books",
+    "description": "Discover books that inspire, educate, and transport you to new worlds. Readora is your modern home for stories, knowledge, and imagination."
+  },
+  {
+    "id": 2,
+    "img": "/hero/image2.webp",
+    "title": "upto 50% off on all books",
+    "description": "Discover books that inspire, educate, and transport you to new worlds. Readora is your modern home for stories, knowledge, and imagination."
+  },
+  {
+    "id": 3,
+    "img": "/hero/image3.webp",
+    "title": "upto 50% off on all books",
+    "description": "Discover books that inspire, educate, and transport you to new worlds. Readora is your modern home for stories, knowledge, and imagination."
+  }
+]
+
+
 }

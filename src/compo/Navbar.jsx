@@ -3,6 +3,7 @@ import { FaCartShopping } from 'react-icons/fa6';
 import { IoIosSearch } from "react-icons/io";
 import { FaCaretDown } from "react-icons/fa"
 import Darkmode from './Darkmode';
+
 const menu = [
     {
         id: 1,
@@ -15,12 +16,12 @@ const menu = [
         link: "/#services"
     },
     {
-        id: 1,
+        id: 3,
         name: "Autobiography",
         link: "/#"
     },
     {
-        id: 1,
+        id: 4,
         name: "Religious",
         link: "/#"
     }
@@ -50,12 +51,12 @@ function Navbar() {
             {/* upper navbar */}
             <div className="bg-primary/40 py-2">
                 <div className="container mx-auto flex justify-between items-center px-4">
-
                     {/* logo */}
-                    <a href="#">
-                        <img src="/images/logo.png" alt="logo" className="w-20 p-0" />
-                    </a>
-
+                    <div>
+                        <a href="#">
+                            <img className="w-10 p-0" src="/images/logo.png" alt="logo" />
+                        </a>
+                    </div>
                     {/* search */}
                     <div className="flex items-center gap-4">
                         <div className="relative group hidden sm:block">
@@ -89,12 +90,10 @@ function Navbar() {
                                 "
                             />
                         </div>
-                    </div>
-
-                    {/* order button */}
-                    <button
-                        onClick={() => alert("Ordering not available yet")}
-                        className="
+                        {/* order button */}
+                        <button
+                            onClick={() => alert("Ordering not available yet")}
+                            className="
                             bg-gradient-to-r
                             from-primary
                             to-secondary
@@ -109,47 +108,51 @@ function Navbar() {
                             transition-all
                             duration-200
                         "
-                    >
-                        <span className="hidden group-hover:block transition-all duration-200">
-                            Order
-                        </span>
-                        <FaCartShopping className="text-xl cursor-pointer" />
-                    </button>
-
-                    {/* dark mode */}
-                    <Darkmode />
-                </div>
-                {/* lower navbar */}
-                <div className='flex justify-center bg-white text-black py-0'>
-                    <ul className='sm:flex hidden items-center gap-4'>
-                        {
-                            menu.map((data) => (
-                                <li key={data.id}>
-                                    <a href={data.link} className='inline-block px-4 hover:text-primary duration-200'>{data.name}</a>
-                                </li>
-                            ))
-                        }
-                        {/* dropdown */}
-                        <li className='group relative cuersor-pointer'>
-                            <a href="#" className='flex items-centergap-[2px] py-2'>trending <span>
-                                <FaCaretDown className='transition-all duration-200 group-hover:rotate-180' /></span></a>
-                            <div className='absolute z-[9999] hidden group-hover:block w-[150px] rounded-md bg-white p-2 text-black shadow-md'>
-                                <ul>
-                                    {
-                                        DropdownLink.map((data) => (
-                                            <li key={data.id}>
-                                                <a href={data.link}
-                                                    className='inline-block w-full rounded-md p-2 hover:bg-primary/20'>{data.name}</a>
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
+                        >
+                            <span className="hidden group-hover:block transition-all duration-200">
+                                Order
+                            </span>
+                            <FaCartShopping className="text-xl cursor-pointer" />
+                        </button>
+                        <div>
+                            {/* dark mode */}
+                            <Darkmode />
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div >
+
+            {/* lower navbar */}
+            <div className='flex justify-center bg-white dark:bg-gray-900 text-black dark:text-white'>
+                <ul className='sm:flex hidden items-center gap-4'>
+                    {
+                        menu.map((data) => (
+                            <li key={data.id}>
+                                <a href={data.link} className='inline-block px-4 hover:text-primary duration-200'>{data.name}</a>
+                            </li>
+                        ))
+                    }
+                    {/* dropdown */}
+                    <li className='group relative cursor-pointer'>
+                        <a href="#" className='flex items-center gap-[2px] py-2'>trending <span>
+                            <FaCaretDown className='transition-all duration-200 group-hover:rotate-180' /></span></a>
+                        <div className='absolute z-[9999] hidden group-hover:block w-[150px] rounded-md bg-white p-2 text-black shadow-md'>
+                            <ul>
+                                {
+                                    DropdownLink.map((data) => (
+                                        <li key={data.id}>
+                                            <a href={data.link}
+                                                className='inline-block w-full rounded-md p-2 hover:bg-primary/20'>{data.name}</a>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     );
 }
 
