@@ -1,27 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Context/AuthContext'
+import api from '../../API/Axios';
 
-
-// const ImageList = [
-//     {
-//         id: 1,
-//         img: Image1,
-//         title: "upto 50% off on all books",
-//         description: "Discover books that inspire, educate, and transport you to new worlds.Readora is your modern home for stories, knowledge, and imagination."
-//     }, {
-//         id: 2,
-//         img: Image2,
-//         title: "upto 50% off on all books",
-//         description: "Discover books that inspire, educate, and transport you to new worlds.Readora is your modern home for stories, knowledge, and imagination."
-//     },
-//     {
-//         id: 3,
-//         img: Image3,
-//         title: "upto 50% off on all books",
-//         description: "Discover books that inspire, educate, and transport you to new worlds.Readora is your modern home for stories, knowledge, and imagination."
-//     }
-// ]
 
 function Hero() {
     const settings = {
@@ -38,8 +20,10 @@ function Hero() {
         pauseOnFocus: true,
     };
     const [hero, setHero] = useState([]);
+    const { user } = useAuth();
+    const navigate = useNavigate()
     useEffect(() => {
-        axios("http://localhost:3000/hero")
+        api.get("/hero")
             .then((res) => setHero(res.data))
             .catch((err) => console.error(err));
     }, [])
@@ -56,19 +40,32 @@ function Hero() {
                             <div className='grid grid-cols-1 sm:grid-cols-2 '>
                                 {/* content section */}
                                 <div className='flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1 relative z-10'>
-                                    <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold'>{item.title}</h1>
-                                    <p className='text-sm'>{item.description}</p>
+                                    <h1 data-aos="zoom-out"
+                                        data-aos-once="true"
+                                        data-aos-duration="500"
+                                        className='text-5xl sm:text-6xl lg:text-7xl font-bold'>{item.title}</h1>
+                                    <p
+                                        data-aos="fade-up"
+                                        data-aos-once="true"
+                                        data-aos-delay="100" className='text-sm'>{item.description}</p>
 
-                                    <div>
-                                        <button className='bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full'>
-                                            Order Now
-                                        </button>
+                                    <div data-aos="fade-up"
+                                        data-aos-once="true"
+                                        data-aos-delay="300">
+                                        {user ? <h1 className='flex justify-center bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full font-thin text-4xl w-auto'>
+                                            Welcome {user.name}
+                                        </h1>
+                                            : <button onClick={() => navigate('/signup')} className='bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full'>
+                                                Register Now
+                                            </button>}
                                     </div>
 
                                 </div>
                                 {/* image section */}
                                 <div className='order-1 sm:order-2'>
-                                    <div className='relative z-10'>
+                                    <div data-aos="zoom-in"
+                                        data-aos-once="true"
+                                        className='relative z-10'>
                                         <img
                                             src={item.img}
                                             alt={item.title}

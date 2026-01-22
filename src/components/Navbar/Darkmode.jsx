@@ -19,14 +19,11 @@ function Darkmode() {
         <button
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             className="
-        px-2
-        py-2
-        rounded-2xl
-        border
+        
+        rounded-full
         border-gray-300
         dark:border-gray-600
-        bg-white
-        dark:bg-gray-800
+       text-2xl    
         text-black
         dark:text-white
         transition-all
@@ -34,7 +31,7 @@ function Darkmode() {
         hover:scale-105
       "
         >
-            {theme === "light" ? "Dark" : "☀️ Light"}
+            {theme === "light" ? "🌙" : "☀️"}
         </button>
     );
 }

@@ -61,12 +61,10 @@
       "firstName": "maziy",
       "lastName": "salman",
       "phone": "9809147713",
-      "address": "asdfg",
+      "addres": "kelathumpaarambil",
       "city": "cheruthuruty",
       "state": "kerala",
-      "pincode": "679532",
-      "cart": [],
-      "addres": "asdfghjkl"
+      "pincode": "679532"
     },
     {
       "id": "1768229009658",
@@ -81,210 +79,6 @@
       "city": "asdf",
       "state": "asdf",
       "pincode": "asdf"
-    },
-    {
-      "id": "1768648072338",
-      "name": "zain",
-      "email": "zain@gmail.com",
-      "phone": "9809147713",
-      "password": "zxcvbnm",
-      "role": "User",
-      "isBlock": false,
-      "cart": [
-        {
-          "id": "bb1",
-          "img": "https://m.media-amazon.com/images/I/81OthjkJBuL.jpg",
-          "title": "The Catcher in the Rye",
-          "author": "J.D. Salinger",
-          "price": 720,
-          "rating": 4.5,
-          "qty": 6
-        },
-        {
-          "id": "b14",
-          "category": "nonfiction",
-          "title": "Educated: A Memoir",
-          "author": "Tara Westover",
-          "img": "https://m.media-amazon.com/images/I/81WojUxbbFL.jpg",
-          "description": "A chilling dystopian novel depicting life under an oppressive regime.",
-          "price": 700,
-          "rating": 4.5,
-          "qty": 1
-        }
-      ],
-      "orders": [],
-      "wishlist": [],
-      "lastName": "abid",
-      "address": "kelathumparambil",
-      "city": "thrissur",
-      "state": "kerala",
-      "pincode": "679532"
-    },
-    {
-      "id": "0578fc98-458e-4d86-8695-d7223f305818",
-      "name": "aboobacker sidheeq",
-      "email": "sidheeq@gmail.com",
-      "phone": "1234567890",
-      "password": "password",
-      "role": "User",
-      "isBlock": false,
-      "cart": [],
-      "orders": [],
-      "wishlist": []
-    },
-    {
-      "id": "794f489c-d782-4a88-b893-9e179c7790d8",
-      "name": "suhaila",
-      "email": "suhaila@gmail.com",
-      "phone": "1234567890",
-      "password": "zxcvbnm",
-      "role": "User",
-      "isBlock": false,
-      "cart": [],
-      "orders": [],
-      "wishlist": [],
-      "lastName": "faisal",
-      "address": "kelathumparambil",
-      "city": "thrissur",
-      "state": "kerala",
-      "pincode": "679532"
-    },
-    {
-      "id": "a37a5682-d73b-4b30-9c59-df3e7d912b6d",
-      "name": "abubacker",
-      "email": "abu@gmail.com",
-      "phone": "1234567890",
-      "password": "zxcvbnm",
-      "role": "User",
-      "isBlock": false,
-      "cart": [],
-      "orders": [],
-      "wishlist": [],
-      "lastName": "asd",
-      "address": "asdfghjk",
-      "city": "asdf",
-      "state": "kerala",
-      "pincode": "123456"
-    },
-    {
-      "id": "dea0a29d-91f3-4aac-a9e3-cf21e43b1b2d",
-      "name": "zainulabid",
-      "email": "zainul@gmail.com",
-      "phone": "1234567890",
-      "password": "zxcvbnm",
-      "role": "User",
-      "isBlock": false,
-      "cart": [],
-      "orders": [
-        {
-          "items": [
-            {
-              "id": "bb2",
-              "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
-              "title": "Pride and Prejudice",
-              "author": "Jane Austen",
-              "price": 680,
-              "rating": 4.5,
-              "qty": 1
-            }
-          ],
-          "paymentMethod": "COD",
-          "totalAmount": 680,
-          "orderDate": "2026-01-22T06:21:39.005Z",
-          "status": "PLACED"
-        },
-        {
-          "items": [
-            {
-              "id": "bb1",
-              "img": "https://m.media-amazon.com/images/I/81OthjkJBuL.jpg",
-              "title": "The Catcher in the Rye",
-              "author": "J.D. Salinger",
-              "price": 720,
-              "rating": 4.5,
-              "qty": 1
-            },
-            {
-              "id": "bb2",
-              "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
-              "title": "Pride and Prejudice",
-              "author": "Jane Austen",
-              "price": 680,
-              "rating": 4.5,
-              "qty": 1
-            },
-            {
-              "id": "bb3",
-              "img": "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg",
-              "title": "The Hobbit",
-              "author": "J.R.R. Tolkien",
-              "price": 850,
-              "rating": 4.5,
-              "qty": 1
-            }
-          ],
-          "paymentMethod": "COD",
-          "totalAmount": 2250,
-          "orderDate": "2026-01-22T06:35:00.038Z",
-          "status": "PLACED"
-        },
-        {
-          "items": [
-            {
-              "id": "b13",
-              "category": "nonfiction",
-              "title": "Sapiens: A Brief History of Humankind",
-              "author": "Yuval Noah Harari",
-              "img": "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg",
-              "description": "An exploration of the history and impact",
-              "price": 950,
-              "rating": 4.5,
-              "qty": 1
-            },
-            {
-              "id": "b15",
-              "category": "nonfiction",
-              "title": "Becoming",
-              "author": "Michelle Obama",
-              "img": "https://m.media-amazon.com/images/I/81h2gWPTYJL.jpg",
-              "description": "A powerful memoir by the former First Lady of the United States.",
-              "price": 850,
-              "rating": 4.5,
-              "qty": 1
-            },
-            {
-              "id": "b16",
-              "category": "nonfiction",
-              "title": "The Immortal Life of Henrietta Lacks",
-              "author": "Rebecca Skloot",
-              "img": "https://m.media-amazon.com/images/I/81OaXwn1x4L.jpg",
-              "description": "A fantasy adventure that follows Bilbo Baggins on a quest to reclaim a lost treasure.",
-              "price": 780,
-              "rating": 4.5,
-              "qty": 2
-            }
-          ],
-          "paymentMethod": "COD",
-          "totalAmount": 3360,
-          "orderDate": "2026-01-22T07:35:25.982Z",
-          "status": "PLACED"
-        }
-      ],
-      "wishlist": [
-        {
-          "id": "bb2",
-          "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
-          "title": "Pride and Prejudice",
-          "author": "Jane Austen",
-          "price": 680,
-          "rating": 4.5
-        }
-      ],
-      "lastName": "",
-      "address": "asdfvbn",
-      "city": "",
-      "state": "",
-      "pincode": ""
     }
   ],
   "allbooks": [
@@ -674,7 +468,7 @@
     },
     {
       "id": "bb2",
-      "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
+      "img": "https://m.media-amazon.com/images/I/81vgOe8YJwL.jpg",
       "title": "Pride and Prejudice",
       "author": "Jane Austen",
       "price": 680,
@@ -690,7 +484,7 @@
     },
     {
       "id": "bb4",
-      "img": "https://i.pinimg.com/736x/8c/09/d9/8c09d9fcb63e9bee8b462ffe27d7de18.jpg",
+      "img": "https://m.media-amazon.com/images/I/81AY+1kJqDL.jpg",
       "title": "Fahrenheit 451",
       "author": "Ray Bradbury",
       "price": 640,
@@ -786,39 +580,5 @@
       "totalAmount": null,
       "orderDate": "2026-01-17T05:10:01.289Z"
     }
-  ],
-  "messages": [
-    {
-      "id": "b093",
-      "name": "muhiyudheen",
-      "email": "muhiyadheensj@gmail.com",
-      "message": "aasdfdgfhh"
-    },
-    {
-      "id": "2945",
-      "name": "asdfghjk",
-      "email": "muhiyadheensj@gmail.com",
-      "message": "qwertyuiop"
-    },
-    {
-      "id": "7d7b",
-      "name": "muhiyudheen",
-      "email": "muhiyadheensj@gmail.com",
-      "message": "good books very helpfull"
-    },
-    {
-      "id": "8d61",
-      "name": "sdfghjkl",
-      "email": "muht@gmail.com",
-      "message": "asdfghj"
-    },
-    {
-      "id": "46ce",
-      "name": "sdfgh",
-      "email": "asdfg@gmail.com",
-      "message": "asdfghjwertyu"
-    }
-  ],
-  "payments": [],
-  "cart": []
+  ]
 }
