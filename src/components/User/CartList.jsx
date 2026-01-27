@@ -3,7 +3,7 @@ import { useCart } from "../Context/Cartcontext";
 import { FaPlus, FaMinus, FaTrash } from "react-icons/fa";
 import { useAuth } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { usePayment } from "../Context/PaymentContext";
+// import { usePayment } from "../Context/PaymentContext";
 
 function CartList() {
 
@@ -11,8 +11,7 @@ function CartList() {
 
     const { user } = useAuth();
     const { cart, increaseQty, decreaseQty, removeFromCart } = useCart();
-    const { payment } = usePayment();
-
+    // const { payment } = usePayment();
 
     if (cart.length === 0) {
         return (
@@ -23,7 +22,7 @@ function CartList() {
     }
 
 
-    const totalPrice = cart.reduce(
+    const totalPrice = cart.items?.reduce(
         (sum, item) => sum + item.price * item.qty,
         0
     );
@@ -36,7 +35,7 @@ function CartList() {
         <div className="container mt-20">
             <h1 className="text-3xl font-bold mb-6">Your Cart</h1>
 
-            {cart.map((item) => (
+            {cart.items?.map((item) => (
                 <div
                     key={item.id}
                     className="flex items-center justify-between bg-white dark:bg-gray-800 shadow-md rounded-xl p-4 mb-4"
