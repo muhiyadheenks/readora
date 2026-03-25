@@ -1,63 +1,35 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
-import { useAuth } from "./AuthContext";
+import { createContext, useContext, useEffect, useState } from "react";
 import api from "../../API/Axios";
+import { useAuth } from "./AuthContext";
 
-const OrderContext = createContext();
+const OrderContext = createContext(null);
+
+export const useOrder = () => {
+    const context = useContext(OrderContext);
+    if (!context) {
+        throw new Error("useOrder must be used within OrderProvider");
+    }
+    return context;
+};
 
 export const OrderProvider = ({ children }) => {
-    const { user, setUser } = useAuth();
+    const { user } = useAuth();
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        if (!user?.id) return;
+        if (!user) {
+            setOrders([]);
+            return;
+        }
 
-        const fetchOrderlist = async () => {
-            try {
-                const res = await api.get(`/users/${user.id}`);
-                setOrders(res.data.orders || []);
-            } catch (err) {
-                console.error("Failed to fetch Ordrlist", err);
-            }
-        };
-
-        fetchOrderlist();
-    }, [user?.id]);
-
-
-
-    // add order
-    const placeOrder = async (cartItems) => {
-        if (!user) return;
-
-        console.log('placed!');
-
-        console.log(cartItems);
-
-        const newOrder = {
-            items: cartItems,
-            createdAt: new Date().toISOString(),
-        };
-
-        const updatedOrders = { ...orders, newOrder };
-        console.log(updatedOrders);
-
-
-        // update
-        await api.put(`/users/${user.id}`, {
-            orders: updatedOrders,
-            cart: [],
-        });
-
-        // update state
-        setOrders(updatedOrders);
-        setUser({ ...user, orders: updatedOrders, cart: [] });
-    };
+        api.get(`/orders?userId=${user.id}`)
+            .then(res => setOrders(res.data))
+            .catch(err => console.error(err));
+    }, [user]);
 
     return (
-        <OrderContext.Provider value={{ orders, placeOrder }}>
+        <OrderContext.Provider value={{ orders, setOrders }}>
             {children}
         </OrderContext.Provider>
     );
 };
-
-export const useOrder = () => useContext(OrderContext);

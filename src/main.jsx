@@ -7,9 +7,7 @@ import "slick-carousel/slick/slick-theme.css"
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './components/Context/AuthContext';
 import { CartProvider } from './components/Context/Cartcontext.jsx';
-import { PaymentProvider } from './components/Context/PaymentContext.jsx';
 import { WishListProvider } from './components/Context/WishListContext.jsx';
-import { SearchProvider } from './components/Context/SearchContext.jsx';
 import { OrderProvider } from './components/Context/OrderContext.jsx';
 
 
@@ -19,17 +17,12 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <AuthProvider>
         <CartProvider>
-          <PaymentProvider>
-            <WishListProvider>
-              <SearchProvider>
-                <OrderProvider>
-                  <App />
-                </OrderProvider>
-              </SearchProvider>
-            </WishListProvider>
-          </PaymentProvider>
+          <WishListProvider>
+            <OrderProvider>
+              <App />
+            </OrderProvider>
+          </WishListProvider>
         </CartProvider>
-
       </AuthProvider>
     </BrowserRouter>
   </StrictMode >

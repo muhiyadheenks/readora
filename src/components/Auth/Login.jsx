@@ -27,7 +27,7 @@ function Login() {
             setError("");
 
             const result = await login(values.email, values.password);
-            console.log(result);
+
 
             if (!result.success) {
                 console.log('passed!');

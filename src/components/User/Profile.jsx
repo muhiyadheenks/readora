@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 function Profile() {
     const navigate = useNavigate();
     const [userdata, setUserdata] = useState([]);
-    const { user, loadingAuth } = useAuth();
+    const { user, loadingAuth, logout } = useAuth();
 
 
     if (loadingAuth) return null;

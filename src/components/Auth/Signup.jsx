@@ -6,11 +6,13 @@ import { Validation } from "./Validation";
 import { useAuth } from "../Context/AuthContext";
 
 const initialValues = {
+    id: uuid(),
     name: "",
     email: "",
     phone: "",
     password: "",
     cpassword: "",
+    role: "user"
 };
 const Signup = () => {
     const navigate = useNavigate();

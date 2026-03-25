@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaShoppingCart } from 'react-icons/fa';
 import { FaArrowLeft, FaHeart, FaStar } from 'react-icons/fa6';
 import { useNavigate, useParams } from 'react-router-dom';

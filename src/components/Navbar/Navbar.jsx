@@ -7,7 +7,6 @@ import { useAuth } from '../Context/AuthContext';
 import { useCart } from '../Context/Cartcontext';
 import { FaCartShopping, FaHeart } from 'react-icons/fa6';
 import { useWishList } from '../Context/WishListContext';
-import { useSearch } from '../Context/SearchContext';
 
 
 const navbar = [
@@ -21,11 +20,11 @@ const navbar = [
 function Navbar() {
     const { wishList } = useWishList();
     const { cart } = useCart();
-    const navigate = useNavigate();
     const { user, logout } = useAuth();
-    const [open, setOpen] = useState(false);
     const dropdownRef = useRef(null);
-    const { searchTerm, setSearchTerm } = useSearch();
+    const navigate = useNavigate();
+    const [open, setOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('')
     // close dropdown on outside click
     useEffect(() => {
         const handler = (e) => {
@@ -43,9 +42,12 @@ function Navbar() {
         navigate('/login');
     };
 
-    const handleSearch = (e) => {
-        setSearchTerm(e.target.value);
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            navigate(`/books?search=${searchTerm}`);
+        }
     };
+
 
 
     return (
@@ -74,7 +76,8 @@ function Navbar() {
                             <input
                                 type="text"
                                 value={searchTerm}
-                                onChange={handleSearch}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                onKeyDown={handleKeyDown}
                                 placeholder="Search books..."
                                 className='rounded-full p-1 pl-3 pr-10 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 w-48 group-hover:w-64'
                             />
@@ -101,9 +104,9 @@ function Navbar() {
                             <button className="relative bg-gradient-to-r from-primary to-secondary text-white py-1 px-4 rounded-full flex items-center gap-2">
                                 <FaCartShopping onClick={() => navigate("/cartlist")}
                                     className="relative text-xl " />
-                                {cart.length > 0 && (
+                                {cart.items?.length > 0 && (
                                     <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                                        {cart.length}
+                                        {cart.items?.length}
                                     </span>
                                 )}
                             </button>

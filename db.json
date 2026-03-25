@@ -46,230 +46,18 @@
   ],
   "users": [
     {
-      "id": "1767950648871",
+      "id": "asdf123",
       "name": "muhiyudheen",
-      "email": "muhiyadheensj@gmail.com",
-      "password": "asdfghjk",
-      "cpassword": "asdfghjk"
-    },
-    {
-      "id": "1767951153081",
-      "name": "mazi",
-      "email": "mazi@gmail.com",
-      "password": "zxcvbnm",
-      "cpassword": "zxcvbnm",
-      "firstName": "maziy",
-      "lastName": "salman",
-      "phone": "9809147713",
-      "address": "asdfg",
-      "city": "cheruthuruty",
-      "state": "kerala",
-      "pincode": "679532",
-      "cart": [],
-      "addres": "asdfghjkl"
-    },
-    {
-      "id": "1768229009658",
-      "name": "abid km",
-      "email": "abi@gmail.com",
-      "password": "asdfghjk",
-      "cpassword": "asdfghjk",
-      "firstName": "zain",
-      "lastName": "abid",
+      "email": "admin@gmail.com",
       "phone": "1234567890",
-      "addres": "asdfghj",
-      "city": "asdf",
-      "state": "asdf",
-      "pincode": "asdf"
-    },
-    {
-      "id": "1768648072338",
-      "name": "zain",
-      "email": "zain@gmail.com",
-      "phone": "9809147713",
-      "password": "zxcvbnm",
-      "role": "User",
+      "password": "admin123",
+      "role": "admin",
       "isBlock": false,
-      "cart": [
-        {
-          "id": "bb1",
-          "img": "https://m.media-amazon.com/images/I/81OthjkJBuL.jpg",
-          "title": "The Catcher in the Rye",
-          "author": "J.D. Salinger",
-          "price": 720,
-          "rating": 4.5,
-          "qty": 6
-        },
-        {
-          "id": "b14",
-          "category": "nonfiction",
-          "title": "Educated: A Memoir",
-          "author": "Tara Westover",
-          "img": "https://m.media-amazon.com/images/I/81WojUxbbFL.jpg",
-          "description": "A chilling dystopian novel depicting life under an oppressive regime.",
-          "price": 700,
-          "rating": 4.5,
-          "qty": 1
-        }
-      ],
-      "orders": [],
-      "wishlist": [],
-      "lastName": "abid",
-      "address": "kelathumparambil",
-      "city": "thrissur",
-      "state": "kerala",
-      "pincode": "679532"
-    },
-    {
-      "id": "0578fc98-458e-4d86-8695-d7223f305818",
-      "name": "aboobacker sidheeq",
-      "email": "sidheeq@gmail.com",
-      "phone": "1234567890",
-      "password": "password",
-      "role": "User",
-      "isBlock": false,
-      "cart": [],
-      "orders": [],
-      "wishlist": []
-    },
-    {
-      "id": "794f489c-d782-4a88-b893-9e179c7790d8",
-      "name": "suhaila",
-      "email": "suhaila@gmail.com",
-      "phone": "1234567890",
-      "password": "zxcvbnm",
-      "role": "User",
-      "isBlock": false,
-      "cart": [],
-      "orders": [],
-      "wishlist": [],
-      "lastName": "faisal",
-      "address": "kelathumparambil",
-      "city": "thrissur",
-      "state": "kerala",
-      "pincode": "679532"
-    },
-    {
-      "id": "a37a5682-d73b-4b30-9c59-df3e7d912b6d",
-      "name": "abubacker",
-      "email": "abu@gmail.com",
-      "phone": "1234567890",
-      "password": "zxcvbnm",
-      "role": "User",
-      "isBlock": false,
-      "cart": [],
-      "orders": [],
-      "wishlist": [],
-      "lastName": "asd",
-      "address": "asdfghjk",
-      "city": "asdf",
-      "state": "kerala",
-      "pincode": "123456"
-    },
-    {
-      "id": "dea0a29d-91f3-4aac-a9e3-cf21e43b1b2d",
-      "name": "zainulabid",
-      "email": "zainul@gmail.com",
-      "phone": "1234567890",
-      "password": "zxcvbnm",
-      "role": "User",
-      "isBlock": false,
-      "cart": [],
-      "orders": [
-        {
-          "items": [
-            {
-              "id": "bb2",
-              "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
-              "title": "Pride and Prejudice",
-              "author": "Jane Austen",
-              "price": 680,
-              "rating": 4.5,
-              "qty": 1
-            }
-          ],
-          "paymentMethod": "COD",
-          "totalAmount": 680,
-          "orderDate": "2026-01-22T06:21:39.005Z",
-          "status": "PLACED"
-        },
-        {
-          "items": [
-            {
-              "id": "bb1",
-              "img": "https://m.media-amazon.com/images/I/81OthjkJBuL.jpg",
-              "title": "The Catcher in the Rye",
-              "author": "J.D. Salinger",
-              "price": 720,
-              "rating": 4.5,
-              "qty": 1
-            },
-            {
-              "id": "bb2",
-              "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
-              "title": "Pride and Prejudice",
-              "author": "Jane Austen",
-              "price": 680,
-              "rating": 4.5,
-              "qty": 1
-            },
-            {
-              "id": "bb3",
-              "img": "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg",
-              "title": "The Hobbit",
-              "author": "J.R.R. Tolkien",
-              "price": 850,
-              "rating": 4.5,
-              "qty": 1
-            }
-          ],
-          "paymentMethod": "COD",
-          "totalAmount": 2250,
-          "orderDate": "2026-01-22T06:35:00.038Z",
-          "status": "PLACED"
-        },
-        {
-          "items": [
-            {
-              "id": "b13",
-              "category": "nonfiction",
-              "title": "Sapiens: A Brief History of Humankind",
-              "author": "Yuval Noah Harari",
-              "img": "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg",
-              "description": "An exploration of the history and impact",
-              "price": 950,
-              "rating": 4.5,
-              "qty": 1
-            },
-            {
-              "id": "b15",
-              "category": "nonfiction",
-              "title": "Becoming",
-              "author": "Michelle Obama",
-              "img": "https://m.media-amazon.com/images/I/81h2gWPTYJL.jpg",
-              "description": "A powerful memoir by the former First Lady of the United States.",
-              "price": 850,
-              "rating": 4.5,
-              "qty": 1
-            },
-            {
-              "id": "b16",
-              "category": "nonfiction",
-              "title": "The Immortal Life of Henrietta Lacks",
-              "author": "Rebecca Skloot",
-              "img": "https://m.media-amazon.com/images/I/81OaXwn1x4L.jpg",
-              "description": "A fantasy adventure that follows Bilbo Baggins on a quest to reclaim a lost treasure.",
-              "price": 780,
-              "rating": 4.5,
-              "qty": 2
-            }
-          ],
-          "paymentMethod": "COD",
-          "totalAmount": 3360,
-          "orderDate": "2026-01-22T07:35:25.982Z",
-          "status": "PLACED"
-        }
-      ],
+      "lastName": "",
+      "address": "qwertyui",
+      "city": "",
+      "state": "",
+      "pincode": "",
       "wishlist": [
         {
           "id": "bb2",
@@ -278,45 +66,102 @@
           "author": "Jane Austen",
           "price": 680,
           "rating": 4.5
+        },
+        {
+          "id": "bb3",
+          "img": "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg",
+          "title": "The Hobbit",
+          "author": "J.R.R. Tolkien",
+          "price": 850,
+          "rating": 4.5
         }
-      ],
+      ]
+    },
+    {
+      "id": "2efa7bc2-dea6-48f1-8ea6-28195b98494b",
+      "name": "muhiyudheen",
+      "email": "muhiyudheen@gmail.com",
+      "phone": "9809147713",
+      "password": "zxcvbnm",
+      "role": "User",
+      "isBlock": false,
+      "cart": [],
+      "orders": [],
+      "wishlist": []
+    },
+    {
+      "id": "5a966f30-f173-4f47-b613-610121aab1a4",
+      "name": "mazin",
+      "email": "mazin@gmail.com",
+      "phone": "1234567890",
+      "password": "zxcvbnm",
+      "role": "User",
+      "isBlock": true,
+      "cart": [],
+      "orders": [],
+      "wishlist": [],
       "lastName": "",
-      "address": "asdfvbn",
+      "address": "asdfghjk",
       "city": "",
       "state": "",
       "pincode": ""
+    },
+    {
+      "id": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "name": "abid",
+      "email": "abi@gmail.com",
+      "phone": "1234567890",
+      "password": "zxcvbnm",
+      "role": "User",
+      "isBlock": false,
+      "lastName": "",
+      "address": "qwertyui",
+      "city": "",
+      "state": "",
+      "pincode": ""
+    },
+    {
+      "id": "a9ebfb30-e1ae-4b71-93d3-19753ec284c9",
+      "name": "sharafu",
+      "email": "sharafu@gmail.com",
+      "phone": "1234567890",
+      "password": "zxcvbnm",
+      "role": "User",
+      "isBlock": false
     }
   ],
   "allbooks": [
     {
       "id": "b1",
-      "category": "fiction",
-      "title": "To Kill a Mockingbird",
       "img": "/images/fic1.jpg",
-      "price": 980,
+      "title": "To Kill a Mockingbird",
       "author": "Harper Lee",
-      "description": "A powerful classic about racial injustice in the American South, seen through a young girl’s eyes.",
-      "rating": 4.5
+      "price": "550",
+      "category": "Fiction",
+      "description": "To Kill a Mockingbird is about racial injustice, morality, and compassion.",
+      "stock": "100"
     },
     {
       "id": "b2",
       "category": "fiction",
       "title": "Nineteen Eighty-Four (1984)",
       "img": "/images/fic2.jpg",
-      "price": 600,
+      "price": "550",
       "author": "George Orwell",
       "description": "A chilling dystopian novel depicting life under an oppressive regime.",
-      "rating": 4.5
+      "rating": 4.5,
+      "stock": "100"
     },
     {
       "id": "b3",
       "category": "fiction",
       "title": "The Great Gatsby",
       "img": "/images/fic3.jpg",
-      "price": 750,
+      "price": "234",
       "author": "F. Scott Fitzgerald",
       "description": "A tragic story of love, wealth, and idealism in 1920s America.",
-      "rating": 4.5
+      "rating": 4.5,
+      "stock": "500"
     },
     {
       "id": "b4",
@@ -326,7 +171,8 @@
       "price": 800,
       "author": "J.K. Rowling",
       "description": "The first in the magical series about a young wizard.",
-      "rating": 4.5
+      "rating": 4.5,
+      "stock": "32"
     },
     {
       "id": "b5",
@@ -334,7 +180,10 @@
       "title": "The Holy Quran",
       "img": "/images/quran.jpg",
       "price": 900,
-      "rating": 4.5
+      "rating": 4.5,
+      "author": "",
+      "description": "",
+      "stock": "75"
     },
     {
       "id": "b6",
@@ -370,7 +219,9 @@
       "img": "https://m.media-amazon.com/images/I/81OthjkJBuL.jpg",
       "description": "A coming-of-age novel that explores themes of teenage angst and alienation.",
       "price": 720,
-      "rating": 4.5
+      "rating": 4.5,
+      "author": "",
+      "stock": "23"
     },
     {
       "id": "b10",
@@ -390,16 +241,6 @@
       "img": "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg",
       "description": "A fantasy adventure that follows Bilbo Baggins on a quest to reclaim a lost treasure.",
       "price": 850,
-      "rating": 4.5
-    },
-    {
-      "id": "b12",
-      "category": "fiction",
-      "title": "Fahrenheit 451",
-      "auther": "Ray Bradbury",
-      "img": "https://m.media-amazon.com/images/I/81AY+1kJqDL.jpg",
-      "description": "A dystopian novel that explores themes of censorship and the power of knowledge.",
-      "price": 640,
       "rating": 4.5
     },
     {
@@ -640,7 +481,30 @@
       "price": 720,
       "author": "Liane Moriarty",
       "description": "A compelling novel that explores the secrets and lies of a group of women.",
-      "rating": 4.5
+      "rating": 4.5,
+      "stock": "50"
+    },
+    {
+      "id": "0d40",
+      "category": "nonfiction",
+      "title": "kadheeja",
+      "img": "",
+      "price": 125,
+      "author": "nasif",
+      "description": "adsfdgfjkl",
+      "rating": 0,
+      "stock": "35"
+    },
+    {
+      "id": "daa3",
+      "category": "fiction",
+      "title": "qwer",
+      "img": "",
+      "price": 1234,
+      "author": "asdfgvhb",
+      "description": "",
+      "rating": "",
+      "stock": ""
     }
   ],
   "hero": [
@@ -723,52 +587,169 @@
   ],
   "orders": [
     {
-      "id": "1767951153081",
+      "id": "6a9b",
+      "userId": "5a966f30-f173-4f47-b613-610121aab1a4",
+      "name": "mazin",
+      "email": "mazin@gmail.com",
       "items": [
         {
-          "id": "b2",
-          "category": "fiction",
-          "title": "Nineteen Eighty-Four (1984)",
-          "img": "/images/fic2.jpg",
-          "price": 600,
-          "author": "George Orwell",
-          "description": "A chilling dystopian novel depicting life under an oppressive regime.",
+          "id": "bb1",
+          "img": "https://m.media-amazon.com/images/I/81OthjkJBuL.jpg",
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb2",
+          "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "price": 680,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb3",
+          "img": "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg",
+          "title": "The Hobbit",
+          "author": "J.R.R. Tolkien",
+          "price": 850,
           "rating": 4.5,
           "qty": 1
         }
       ],
       "paymentMethod": "COD",
-      "totalAmount": null,
-      "orderDate": "2026-01-15T09:32:51.573Z"
+      "totalAmount": 2250,
+      "orderDate": "2026-01-28T06:45:31.246Z",
+      "status": "PLACED"
     },
     {
-      "id": "1767951153081",
-      "items": [],
-      "paymentMethod": "COD",
-      "totalAmount": 0,
-      "orderDate": "2026-01-15T16:58:12.611Z"
-    },
-    {
-      "id": "1767951153081",
+      "id": "0074",
+      "userId": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "name": "abid",
+      "email": "abi@gmail.com",
       "items": [
         {
-          "id": "b16",
-          "category": "nonfiction",
-          "title": "The Immortal Life of Henrietta Lacks",
-          "author": "Rebecca Skloot",
-          "img": "https://m.media-amazon.com/images/I/81OaXwn1x4L.jpg",
-          "description": "A fantasy adventure that follows Bilbo Baggins on a quest to reclaim a lost treasure.",
-          "price": 780,
+          "id": "bb3",
+          "img": "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg",
+          "title": "The Hobbit",
+          "author": "J.R.R. Tolkien",
+          "price": 850,
           "rating": 4.5,
-          "qty": 10
+          "qty": 1
+        },
+        {
+          "id": "bb2",
+          "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "price": 680,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb1",
+          "img": "https://m.media-amazon.com/images/I/81OthjkJBuL.jpg",
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
         }
       ],
       "paymentMethod": "COD",
-      "totalAmount": null,
-      "orderDate": "2026-01-17T04:43:44.112Z"
+      "totalAmount": 2250,
+      "orderDate": "2026-01-28T08:17:32.505Z",
+      "status": "PLACED"
     },
     {
-      "id": "1767951153081",
+      "id": "d0a1",
+      "userId": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "name": "abid",
+      "email": "abi@gmail.com",
+      "items": [
+        {
+          "id": "bb2",
+          "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "price": 680,
+          "rating": 4.5,
+          "qty": 1
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 680,
+      "orderDate": "2026-01-28T10:37:16.028Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "5b14",
+      "userId": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "name": "abid",
+      "email": "abi@gmail.com",
+      "items": [
+        {
+          "id": "b7",
+          "category": "devotional book",
+          "title": "The Holy Bible",
+          "img": "/images/bible.jpg",
+          "price": 820,
+          "rating": 4.5,
+          "qty": 2
+        },
+        {
+          "id": "b6",
+          "category": "devotional book",
+          "title": "Bhagavad Gita",
+          "img": "/images/bhagavad-gita.jpg",
+          "price": 790,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "b5",
+          "category": "devotional book",
+          "title": "The Holy Quran",
+          "img": "/images/quran.jpg",
+          "price": 900,
+          "rating": 4.5,
+          "qty": 1
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 3330,
+      "orderDate": "2026-01-28T12:58:58.175Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "8ebc",
+      "userId": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "name": "abid",
+      "email": "abi@gmail.com",
+      "items": [
+        {
+          "id": "b7",
+          "category": "devotional book",
+          "title": "The Holy Bible",
+          "img": "/images/bible.jpg",
+          "price": 820,
+          "rating": 4.5,
+          "qty": 1
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 820,
+      "orderDate": "2026-01-28T15:02:17.704Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "f747",
+      "userId": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "name": "abid",
+      "email": "abi@gmail.com",
       "items": [
         {
           "id": "b14",
@@ -783,8 +764,421 @@
         }
       ],
       "paymentMethod": "COD",
-      "totalAmount": null,
-      "orderDate": "2026-01-17T05:10:01.289Z"
+      "totalAmount": 700,
+      "orderDate": "2026-01-29T08:07:13.179Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "2a65",
+      "userId": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "name": "abid",
+      "email": "abi@gmail.com",
+      "items": [
+        {
+          "id": "bb1",
+          "img": "https://m.media-amazon.com/images/I/81OthjkJBuL.jpg",
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb2",
+          "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "price": 680,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb3",
+          "img": "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg",
+          "title": "The Hobbit",
+          "author": "J.R.R. Tolkien",
+          "price": 850,
+          "rating": 4.5,
+          "qty": 1
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 2250,
+      "orderDate": "2026-01-29T08:11:14.107Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "967a",
+      "userId": "5a966f30-f173-4f47-b613-610121aab1a4",
+      "name": "mazin",
+      "email": "mazin@gmail.com",
+      "items": [
+        {
+          "id": "b14",
+          "category": "nonfiction",
+          "title": "Educated: A Memoir",
+          "author": "Tara Westover",
+          "img": "https://m.media-amazon.com/images/I/81WojUxbbFL.jpg",
+          "description": "A chilling dystopian novel depicting life under an oppressive regime.",
+          "price": 700,
+          "rating": 4.5,
+          "qty": 1
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 700,
+      "orderDate": "2026-01-29T11:13:39.080Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "3fb3",
+      "userId": "5a966f30-f173-4f47-b613-610121aab1a4",
+      "name": "mazin",
+      "email": "mazin@gmail.com",
+      "items": [
+        {
+          "id": "b14",
+          "category": "nonfiction",
+          "title": "Educated: A Memoir",
+          "author": "Tara Westover",
+          "img": "https://m.media-amazon.com/images/I/81WojUxbbFL.jpg",
+          "description": "A chilling dystopian novel depicting life under an oppressive regime.",
+          "price": 700,
+          "rating": 4.5,
+          "qty": 1
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 700,
+      "orderDate": "2026-01-29T11:43:59.977Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "37ea",
+      "userId": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "name": "abid",
+      "email": "abi@gmail.com",
+      "items": [
+        {
+          "id": "bb1",
+          "img": "https://m.media-amazon.com/images/I/81OthjkJBuL.jpg",
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb2",
+          "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "price": 680,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb3",
+          "img": "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg",
+          "title": "The Hobbit",
+          "author": "J.R.R. Tolkien",
+          "price": 850,
+          "rating": 4.5,
+          "qty": 1
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 2250,
+      "orderDate": "2026-01-30T04:27:42.775Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "fc5b",
+      "userId": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "name": "abid",
+      "email": "abi@gmail.com",
+      "items": [
+        {
+          "id": "bb2",
+          "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "price": 680,
+          "rating": 4.5,
+          "qty": 1
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 680,
+      "orderDate": "2026-01-30T05:45:38.047Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "d57e",
+      "userId": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "name": "abid",
+      "email": "abi@gmail.com",
+      "items": [
+        {
+          "id": "bb2",
+          "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "price": 680,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb1",
+          "img": "https://m.media-amazon.com/images/I/81OthjkJBuL.jpg",
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb3",
+          "img": "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg",
+          "title": "The Hobbit",
+          "author": "J.R.R. Tolkien",
+          "price": 850,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb7",
+          "img": "https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg",
+          "title": "The Girl with the Dragon Tattoo",
+          "author": "Stieg Larsson",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb4",
+          "img": "https://i.pinimg.com/736x/8c/09/d9/8c09d9fcb63e9bee8b462ffe27d7de18.jpg",
+          "title": "Fahrenheit 451",
+          "author": "Ray Bradbury",
+          "price": 640,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb5",
+          "img": "https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg",
+          "title": "The Alchemist",
+          "author": "Paulo Coelho",
+          "price": 670,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb6",
+          "img": "https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg",
+          "title": "The Da Vinci Code",
+          "author": "Dan Brown",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 5000,
+      "orderDate": "2026-01-30T08:19:32.351Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "d7ff",
+      "userId": "asdf123",
+      "name": "muhiyudheen",
+      "email": "admin@gmail.com",
+      "items": [
+        {
+          "id": "bb2",
+          "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "price": 680,
+          "rating": 4.5,
+          "qty": 1
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 680,
+      "orderDate": "2026-01-30T11:43:35.186Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "b4e7",
+      "userId": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "name": "abid",
+      "email": "abi@gmail.com",
+      "items": [
+        {
+          "id": "bb1",
+          "img": "https://m.media-amazon.com/images/I/81OthjkJBuL.jpg",
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb2",
+          "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "price": 680,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb3",
+          "img": "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg",
+          "title": "The Hobbit",
+          "author": "J.R.R. Tolkien",
+          "price": 850,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb4",
+          "img": "https://i.pinimg.com/736x/8c/09/d9/8c09d9fcb63e9bee8b462ffe27d7de18.jpg",
+          "title": "Fahrenheit 451",
+          "author": "Ray Bradbury",
+          "price": 640,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb5",
+          "img": "https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg",
+          "title": "The Alchemist",
+          "author": "Paulo Coelho",
+          "price": 670,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb6",
+          "img": "https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg",
+          "title": "The Da Vinci Code",
+          "author": "Dan Brown",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb7",
+          "img": "https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg",
+          "title": "The Girl with the Dragon Tattoo",
+          "author": "Stieg Larsson",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 5000,
+      "orderDate": "2026-01-31T09:55:28.438Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "840d",
+      "userId": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "name": "abid",
+      "email": "abi@gmail.com",
+      "items": [
+        {
+          "id": "bb1",
+          "img": "https://m.media-amazon.com/images/I/81OthjkJBuL.jpg",
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb2",
+          "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "price": 680,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb3",
+          "img": "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg",
+          "title": "The Hobbit",
+          "author": "J.R.R. Tolkien",
+          "price": 850,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb4",
+          "img": "https://i.pinimg.com/736x/8c/09/d9/8c09d9fcb63e9bee8b462ffe27d7de18.jpg",
+          "title": "Fahrenheit 451",
+          "author": "Ray Bradbury",
+          "price": 640,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb5",
+          "img": "https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg",
+          "title": "The Alchemist",
+          "author": "Paulo Coelho",
+          "price": 670,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb6",
+          "img": "https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg",
+          "title": "The Da Vinci Code",
+          "author": "Dan Brown",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
+        },
+        {
+          "id": "bb7",
+          "img": "https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg",
+          "title": "The Girl with the Dragon Tattoo",
+          "author": "Stieg Larsson",
+          "price": 720,
+          "rating": 4.5,
+          "qty": 1
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 5000,
+      "orderDate": "2026-02-03T06:51:58.414Z",
+      "status": "PLACED"
+    },
+    {
+      "id": "e21c",
+      "userId": "asdf123",
+      "name": "muhiyudheen",
+      "email": "admin@gmail.com",
+      "items": [
+        {
+          "id": "bb2",
+          "img": "https://i.pinimg.com/1200x/b9/6b/93/b96b93a8866869e8f232835bebed2b15.jpg",
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "price": 680,
+          "rating": 4.5,
+          "qty": 2
+        }
+      ],
+      "paymentMethod": "COD",
+      "totalAmount": 1360,
+      "orderDate": "2026-02-24T09:20:30.549Z",
+      "status": "PLACED"
     }
   ],
   "messages": [
@@ -819,6 +1213,27 @@
       "message": "asdfghjwertyu"
     }
   ],
-  "payments": [],
-  "cart": []
+  "cart": [
+    {
+      "id": "9e7c",
+      "userId": "8db0f6e1-e0ba-4fc0-8d3b-0b6b88971823",
+      "items": []
+    },
+    {
+      "id": "90d3",
+      "userId": "asdf123",
+      "items": []
+    }
+  ],
+  "admin": [
+    {
+      "id": "asdf123",
+      "name": "muhiyudheen",
+      "email": "admin@gmail.com",
+      "phone": "1234567890",
+      "password": "admin123",
+      "role": "admin",
+      "isBlock": false
+    }
+  ]
 }

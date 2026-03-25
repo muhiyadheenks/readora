@@ -20,10 +20,11 @@ function Checkout() {
         }
     }, [user, navigate]);
 
-    const totalAmount = cart.reduce(
-        (total, item) => total + Number(item.price) * (item.quantity || 1),
-        0
-    );
+    const totalAmount = cart.item
+        ?.reduce(
+            (total, item) => total + Number(item.price) * (item.quantity || 1),
+            0
+        );
 
 
 
@@ -46,7 +47,7 @@ function Checkout() {
             {/* Items */}
             <div className="mb-4">
                 <h2 className="font-semibold">Order Items</h2>
-                {cart.map((item) => (
+                {cart.items?.map((item) => (
                     <div key={item.id} className="flex justify-between">
                         <p>{item.title}</p>
                         <p>₹{item.price}</p>

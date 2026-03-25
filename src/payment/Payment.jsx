@@ -1,8 +1,4 @@
-
-
-
 import React, { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../components/Context/Cartcontext";
 import { useAuth } from "../components/Context/AuthContext";
@@ -13,21 +9,20 @@ function Payment() {
     const [method, setMethod] = useState("COD");
     const navigate = useNavigate();
     const { cart, clearCart } = useCart();
-    const { user, setUser } = useAuth();
-    const { orders } = useOrder();
-
-
-    console.log(user);
-
+    const { user } = useAuth();
+    const { orders, setOrders } = useOrder();
 
     const handlePayment = async () => {
-        if (!user || cart.length === 0) return;
+        if (!user || cart.items?.length === 0) return;
 
         try {
             const orderData = {
-                items: cart,
+                userId: user.id,
+                name: user.name,
+                email: user.email,
+                items: cart.items,
                 paymentMethod: method,
-                totalAmount: cart.reduce(
+                totalAmount: cart.items?.reduce(
                     (total, item) => total + item.price * item.qty,
                     0
                 ),
@@ -35,26 +30,14 @@ function Payment() {
                 status: "PLACED",
             };
 
-            // console.log(orderData);
+            await api.post("/orders", orderData);
 
+            setOrders([...orders, orderData]);
 
-            const updatedOrders = [...(orders), orderData];
+            await clearCart();
 
-            await api.patch(`/users/${user.id}`, {
-                ...user,
-                orders: updatedOrders
-            });
-
-            setUser(prev => ({
-                ...prev,
-                orders: updatedOrders,
-                cart: [],
-            }));
-
-            clearCart();
             alert("Payment Successful");
             navigate("/ordersuccess");
-
         } catch (err) {
             console.error("Payment failed", err);
         }
@@ -93,4 +76,3 @@ function Payment() {
 }
 
 export default Payment;
-
