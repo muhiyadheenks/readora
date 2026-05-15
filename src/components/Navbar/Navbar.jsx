@@ -44,7 +44,7 @@ function Navbar() {
 
     const handleKeyDown = (e) => {
         if (e.key === "Enter") {
-            navigate(`/books?search=${searchTerm}`);
+            navigate(`/books?title=${searchTerm}`);
         }
     };
 

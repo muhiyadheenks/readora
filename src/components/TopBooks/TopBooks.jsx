@@ -18,7 +18,7 @@ function TopBooks() {
     const [currentpage, setCurrentpage] = useState(1)
     const itemsperpage = 3;
     useEffect(() => {
-        api.get("/bestbooks")
+        api.get("/api/bestbooks")
             .then((res) => setTopproducts(res.data))
             .catch((err) => console.error(err))
     }, []);

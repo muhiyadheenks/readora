@@ -23,10 +23,12 @@ function Hero() {
     const { user } = useAuth();
     const navigate = useNavigate()
     useEffect(() => {
-        api.get("/hero")
+        api.get("/api/hero")
             .then((res) => setHero(res.data))
             .catch((err) => console.error(err));
     }, [])
+    console.log(hero);
+
     return (
         <div className='relative overflow-hidden min-h-screen sm:min-h-[650px] bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200 '>
             {/* background pattern */}
@@ -34,7 +36,7 @@ function Hero() {
             {/* hero section */}
             <div className='container pb-8 sm:pb-0'>
                 <Slider {...settings}>
-                    {hero.map((item) => (
+                    {hero?.map((item) => (
 
                         <div key={item.id}>
                             <div className='grid grid-cols-1 sm:grid-cols-2 '>

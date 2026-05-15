@@ -38,9 +38,11 @@ function Login() {
                 setIsSubmitting(false);
                 return;
             }
+            localStorage.setItem('token', result.token)
             alert("Login successful");
             setIsSubmitting(false);
             navigate('/')
+
         }
 
 

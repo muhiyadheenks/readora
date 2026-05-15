@@ -148,14 +148,19 @@ const Signup = () => {
                             className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:text-white"
                         />
                     </div>
+                    {errors.name && touched.name && (
+                        <p className="text-red-500 text-sm">{errors.name}</p>
+                    )}
 
                     {/* Button */}
                     <button
                         type="submit"
-                        className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg font-semibold transition"
+                        disabled={isSubmitting}
+                        className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg font-semibold transition disabled:opacity-50"
                     >
-                        Sign Up
+                        {isSubmitting ? "Creating..." : "Sign Up"}
                     </button>
+
                     {error && (
                         <p className="text-red-500 text-sm text-center">{error}</p>
                     )}
@@ -168,7 +173,7 @@ const Signup = () => {
                     </Link>
                 </p>
             </div>
-        </div>
+        </div >
     );
 };
 

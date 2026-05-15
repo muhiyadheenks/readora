@@ -8,14 +8,14 @@ import { useAuth } from '../Context/AuthContext';
 import api from '../../API/Axios';
 
 function BookDetailes() {
-    const [currentbook, setCurrentbook] = useState([]);
+    const [currentbook, setCurrentbook] = useState({});
     const { id } = useParams();
     const { addToWishList } = useWishList();
     const { addToCart } = useCart();
     const { user } = useAuth();
     const navigate = useNavigate();
     useEffect(() => {
-        api.get(`/allbooks/${id}`)
+        api.get(`/api/books/${id}`)
             .then((res) => setCurrentbook(res.data))
             .catch((error) => console.error(error));
     }, [id]);

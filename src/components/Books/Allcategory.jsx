@@ -10,7 +10,7 @@ function Allcategory() {
     const [currentpage, setCurrentpage] = useState(1)
     const itemsperpage = 3;
     useEffect(() => {
-        api.get(`/allcategary`)
+        api.get(`/api/allcategory`)
             .then((res) => setBook(res.data))
             .catch((err) => console.error(err))
     }, []);
@@ -33,7 +33,7 @@ function Allcategory() {
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5 place-items-center gap-20 '>
                     {/* card section */}
                     {currentitems.map((data) => (
-                        <div key={data.id}
+                        <div key={data._id}
                             data-aos="fade-up"
                             data-aos-delay={data.aosDelay}
                             className='space-y-3'>
@@ -45,7 +45,7 @@ function Allcategory() {
                                 <h3 className='font-semibold'>{data.type}-{data.author}</h3>
                                 <p className='text-sm text-gray-600'>{data.description}</p>
 
-                                <button onClick={() => navigate(`/books/${data.category}`)}
+                                <button onClick={() => navigate(`/books/${encodeURIComponent(data.category)}`)}
                                     className=" bg-gradient-to-r
                             from-primary
                             to-secondary
