@@ -14,7 +14,7 @@ function Checkout() {
     }
 
     useEffect(() => {
-        if (user && !user.address) {
+        if (user && !user.address.address) {
             alert("Please add your address in profile before placing order");
             navigate("/profile");
         }
@@ -40,7 +40,7 @@ function Checkout() {
             {/* Address */}
             <div className="mb-4">
                 <h2 className="font-semibold">Delivery Address</h2>
-                <p>{user.address || "No address added"}</p>
+                <p>{user.address.address || "No address added"}</p>
             </div>
 
 
@@ -48,7 +48,7 @@ function Checkout() {
             <div className="mb-4">
                 <h2 className="font-semibold">Order Items</h2>
                 {cart.items?.map((item) => (
-                    <div key={item.id} className="flex justify-between">
+                    <div key={item._id} className="flex justify-between">
                         <p>{item.title}</p>
                         <p>₹{item.price}</p>
                     </div>

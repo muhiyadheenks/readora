@@ -20,17 +20,18 @@ const AdminBooks = ({ book }) => {
     const [addopen, setAddopen] = useState(false);
     const [page, setPage] = useState(1)
     const limit = 8;
-
-    const handleEdit = (book) => {
-        setSelectedBook(book)
+    const [totalPages, setTotalPages] = useState(1)
+    const handleEdit = (books) => {
+        setSelectedBook(books)
         setOpen(true);
     };
+    console.log(selectedBook, 'select');
+
     const fetchbook = async () => {
         try {
-            const res = await api.get(`/allbooks?&_sort=id&_order=asc`)
-            const start = (page - 1) * limit;
-            const end = start + limit;
-            setBooks(res.data.slice(start, end));
+            const res = await api.get(`/api/admin-books?_page=${page}&_limit=${limit}&_sort=price&_order=asc`)
+            setBooks(res.data.books)
+            setTotalPages(res.data.totalPages)
         } catch (err) {
             console.error(err)
         }
@@ -43,11 +44,11 @@ const AdminBooks = ({ book }) => {
     // editbook & updation
     const handleSave = async (updatedBook) => {
         try {
-            await api.patch(`/allbooks/${selectedBook.id}`, updatedBook);
+            await api.patch(`/api/admin-book/${selectedBook._id}`, updatedBook);
 
             setBooks((prev) =>
                 prev.map((b) =>
-                    b.id === selectedBook.id ? { ...b, ...updatedBook } : b
+                    b._id === selectedBook._id ? { ...b, ...updatedBook } : b
                 )
             );
 
@@ -64,11 +65,12 @@ const AdminBooks = ({ book }) => {
         book.title.toLowerCase().includes(search.toLowerCase())
     )
 
-    const deleteBook = async (id) => {
+
+    const deleteBook = async (_id) => {
         if (window.confirm("Delete this book?"))
             try {
-                api.delete(`/allbooks/${id}`);
-                setBooks(prev => prev.filter((o) => o.id !== id))
+                api.delete(`/api/admin-book/${_id}`);
+                setBooks(prev => prev.filter((o) => o._id !== _id))
             } catch (error) {
                 console.error("Delete failed", error);
 
@@ -139,7 +141,9 @@ const AdminBooks = ({ book }) => {
                         )}
 
                         {filteredBooks.map((book) => (
-                            <tr key={book.id} className="border-t hover:bg-gray-50">
+
+                            <tr key={book._id} className="border-t hover:bg-gray-50">
+
                                 <td className="p-3">
                                     <img
                                         src={book.img}
@@ -161,7 +165,7 @@ const AdminBooks = ({ book }) => {
                                         <FaEdit />
                                     </button>
                                     <button
-                                        onClick={() => deleteBook(book.id)}
+                                        onClick={() => deleteBook(book._id)}
                                         className="text-red-600 hover:text-red-800"
                                     >
                                         <FaTrash />
@@ -184,7 +188,7 @@ const AdminBooks = ({ book }) => {
                 <button
                     className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded"
 
-                    disabled={books.length < limit}
+                    disabled={page >= totalPages}
                     onClick={() => setPage(p => p + 1)}
                 >
                     Next

@@ -20,12 +20,12 @@ export const AdminAuthProvider = ({ children }) => {
 
     const adminLogin = async (email, password) => {
         try {
-            const res = await api.post("/admin", { email, password })
+            const res = await api.post("/api/users/admin-login", { email, password })
 
             setAdmin(res.data)
             localStorage.setItem("admin", JSON.stringify(res.data))
-
             return true
+
         } catch (err) {
             console.error("Admin login failed", err)
             return false

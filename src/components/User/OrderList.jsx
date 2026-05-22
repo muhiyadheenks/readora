@@ -6,7 +6,6 @@ import { useOrder } from '../Context/OrderContext';
 function OrderList() {
     const { orders } = useOrder();
 
-    console.log('orders', orders);
 
     if (!orders || orders.length === 0) {
         return <p>No orders found</p>;

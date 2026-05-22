@@ -1,29 +1,18 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useAuth } from "../components/Context/AuthContext";
+import { useAdminAuth } from "../Admin/context/AuthContext";
 
-const AdminAuth = () => {
-    const { user, loadingAuth } = useAuth();
+const AdminAuthGuard = () => {
+    const { admin, loading } = useAdminAuth();
 
-    // wait for refresh auth restore
-    if (loadingAuth) return null; // or spinner
+    if (loading) return null;
 
     // not logged in
-    if (!user) {
-        return <Navigate to="/admin" replace />;
-    }
-
-    // blocked admin
-    if (user.isBlock) {
-        return <Navigate to="/blocked" replace />;
-    }
-
-    // not admin
-    if (user.role !== "admin") {
-        return <Navigate to="/" replace />;
+    if (!admin) {
+        return <Navigate to="/admin/login" replace />;
     }
 
     // allowed
     return <Outlet />;
 };
 
-export default AdminAuth;
+export default AdminAuthGuard;

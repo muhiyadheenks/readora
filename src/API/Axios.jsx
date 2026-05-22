@@ -5,26 +5,16 @@ const api = axios.create({
     timeout: 10000
 })
 api.interceptors.request.use((config) => {
-    const token = localStorage.getItem("token");
-    if (token) {
+    const adminData = localStorage.getItem("admin")
+    const userData = localStorage.getItem("token");
+    if (adminData) {
+        const token = JSON.parse(adminData).token
         config.headers.Authorization = `Bearer ${token}`
+    } else if (userData) {
+        config.headers.Authorization = `Bearer ${userData}`
+
     }
     return config
 })
 export default api;
 
-// import axios from "axios";
-
-// const api = axios.create({
-//     baseURL: import.meta.env.VITE_API_URL,
-//     timeout: 10000
-// })
-
-// api.interceptors.request.use((config) => {
-//     const token = localStorage.getItem("token");
-//     if (token) {
-//         config.headers.Authorization = `Bearer ${token}`
-//     }
-//     return config
-// })
-// export default api;

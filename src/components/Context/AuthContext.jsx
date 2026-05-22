@@ -152,25 +152,17 @@ export const AuthProvider = ({ children }) => {
     /* ---------------- RESTORE AUTH ON REFRESH ---------------- */
     useEffect(() => {
         const restoreAuth = async () => {
-            const storedUser = localStorage.getItem("user");
-            const token = localStorage.getItem("token");
-
-
-            if (!storedUser || !token) {
-                setLoadingAuth(false);
-                return;
-            }
-
             try {
+                const storedUser = localStorage.getItem("user");
+                const token = localStorage.getItem("token");
+
+                if (!storedUser || !token) {
+                    setLoadingAuth(false);
+                    return;
+                }
                 const parsedUser = JSON.parse(storedUser);
-                const res = await api.get(`/api/users/${parsedUser._id}`, {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
-                setUser(res.data);
+                setUser(parsedUser);
             } catch (err) {
-                console.log(err.response, "refresh");
 
                 localStorage.removeItem("user");
                 localStorage.removeItem("token");
@@ -182,7 +174,6 @@ export const AuthProvider = ({ children }) => {
 
         restoreAuth();
     }, []);
-
     /* ---------------- LOGIN ---------------- */
 
     const login = async (email, password) => {
@@ -199,8 +190,6 @@ export const AuthProvider = ({ children }) => {
 
             // USER
             setUser(res.data.user)
-            console.log(res.data.user, "check");
-
 
             localStorage.setItem("user", JSON.stringify(res.data.user))
             console.log(user, "user");
@@ -222,11 +211,37 @@ export const AuthProvider = ({ children }) => {
     }
 
     /* ---------------- LOGOUT ---------------- */
-    const logout = () => {
+    const logout = async () => {
+        await api.post("/api/users/logout");
         localStorage.removeItem("user");
         localStorage.removeItem("token");
         setUser(null);
         navigate("/");
+    };
+
+    //update profile
+    const updateProfile = async (updatedData) => {
+        try {
+            const res = await api.patch(`/api/users/${user._id}`, updatedData);
+            setUser(res.data);
+
+            localStorage.setItem(
+                "user",
+                JSON.stringify(res.data)
+            );
+
+            return {
+                success: true,
+                user: res.data
+            };
+
+        } catch (error) {
+
+            return {
+                success: false,
+                error: error.response?.data || "Update failed"
+            };
+        }
     };
 
     const value = {
@@ -235,6 +250,7 @@ export const AuthProvider = ({ children }) => {
         login,
         register,
         logout,
+        updateProfile,
         loadingAuth,
         isAuthenticated: !!user,
     };

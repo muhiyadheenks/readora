@@ -271,7 +271,6 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const { user } = useAuth();
     const [cart, setCart] = useState({});
-    const [refreshcart, setRefreshcart] = useState(Math.random());
 
     // Fetch cart on login
     useEffect(() => {
@@ -282,13 +281,12 @@ export const CartProvider = ({ children }) => {
         api
             .get(`/api/cart?userId=${user._id}`)
             .then((res) => {
-                console.log("cart response:", res.data); // ✅ add this
 
                 setCart(res.data || {});
 
             })
             .catch((err) => console.error(err));
-    }, [user, refreshcart]);
+    }, [user?._id]);
 
     const saveCartToDB = async (items) => {
         if (!user) return;
@@ -310,7 +308,6 @@ export const CartProvider = ({ children }) => {
                 });
                 setCart(res.data);
             }
-            setRefreshcart(Math.random());
         } catch (err) {
             console.error("Cart save error:", err);
         }

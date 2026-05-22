@@ -22,7 +22,7 @@ function TopBooks() {
             .then((res) => setTopproducts(res.data))
             .catch((err) => console.error(err))
     }, []);
-    if (!topproducts) {
+    if (topproducts.length === 0) {
         return <div>Loading...</div>;
     }
     const lastindex = currentpage * itemsperpage;
@@ -35,7 +35,7 @@ function TopBooks() {
         <div className='min-h-screen'>
             <div className='container '>
                 {/* headear */}
-                <div className='text-center mb-10 max-w-[600px] max-auto w-fit m-auto'>
+                <div className='text-center mb-10 max-w-[600px] max-auto w-fit'>
                     <p data-aos="fade-up" className='text-sm text-primary '>Top Rated Books for you</p>
                     <h1 data-aos="fade-up" className='text-3xl font-bold'>Best Books</h1>
                     <p className='text-xs text-gray-400'>"Discover books that inspire, educate, and transport you to new worlds.Readora is your modern home for stories, knowledge, and imagination.</p>
@@ -43,7 +43,7 @@ function TopBooks() {
                 {/* body */}
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5 place-items-center gap-10'>
                     {currentitems.map((item) => (
-                        <div key={item.id} data-aos="zoom-in" className='rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group max-w-[400px] w-[200px] h-[350px]'>
+                        <div key={item._id} data-aos="zoom-in" className='rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group max-w-[400px] w-[200px] h-[350px]'>
                             <button onClick={() => addToWishList(item)} className='absolute top-3 right-1 bg-white p-2 rounded-full shadow text-red-500 hover:scale-110 transition text-2xl'>
                                 <FaHeart /></button>
                             {/* image section */}

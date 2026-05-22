@@ -15,19 +15,20 @@ const Dashboard = () => {
     const [orders, setOrders] = useState([])
     const [books, setBooks] = useState([])
     useEffect(() => {
-        api.get('/users')
+        api.get('/api/users/admin-users')
             .then(res => setusers(res.data))
         api.get('/orders')
             .then(res => setOrders(res.data))
-        api.get('/allbooks')
+        api.get('/api/admin-books')
             .then(res => setBooks(res.data))
 
     }, [])
     const totalRevenue = orders.reduce(
         (sum, order) => sum + order.totalAmount,
         0
-
     );
+    console.log('books', books);
+
 
     const revenueData = orders.reduce((acc, order) => {
         const date = new Date(order.orderDate).toLocaleDateString()
@@ -94,7 +95,7 @@ const Dashboard = () => {
                 />
                 <StatCard
                     title="Books"
-                    value={books.length}
+                    value={books.total}
                     icon={<FaBook />}
                     to="/admin/adminbooks"
                 />

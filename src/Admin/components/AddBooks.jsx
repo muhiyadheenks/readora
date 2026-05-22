@@ -30,13 +30,13 @@ function AddBooks({ isOpen, onClose }) {
         }
 
         try {
-            await api.post("/allbooks", {
+            await api.post("/api/books", {
                 ...book,
                 price: Number(book.price),
 
             })
 
-            alert("Book added successfully ✅")
+            alert("Book added successfully ")
             onClose()   // close modal after success
 
             setBook({

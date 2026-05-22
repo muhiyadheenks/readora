@@ -9,6 +9,7 @@ import { AuthProvider } from './components/Context/AuthContext';
 import { CartProvider } from './components/Context/Cartcontext.jsx';
 import { WishListProvider } from './components/Context/WishListContext.jsx';
 import { OrderProvider } from './components/Context/OrderContext.jsx';
+import { AdminAuthProvider } from './Admin/context/AuthContext.jsx';
 
 
 
@@ -19,7 +20,9 @@ createRoot(document.getElementById('root')).render(
         <CartProvider>
           <WishListProvider>
             <OrderProvider>
-              <App />
+              <AdminAuthProvider>
+                <App />
+              </AdminAuthProvider>
             </OrderProvider>
           </WishListProvider>
         </CartProvider>

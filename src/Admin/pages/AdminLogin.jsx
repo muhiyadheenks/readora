@@ -1,11 +1,10 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { useAuth } from "../../components/Context/AuthContext"
 import { FaEye, FaEyeSlash } from "react-icons/fa6"
-import api from "../../API/Axios"
+import { useAdminAuth } from "../context/AuthContext"
 
 const AdminLogin = () => {
-    const { login } = useAuth()
+    const { adminLogin } = useAdminAuth()
     const navigate = useNavigate()
 
     const [email, setEmail] = useState("")
@@ -16,10 +15,13 @@ const AdminLogin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setError("")
-        console.log('submitting...');
 
-
-        await login(email, password)
+        const success = await adminLogin(email, password)
+        if (success) {
+            navigate("/admin/dashboard")
+        } else {
+            setError("Invalid email or password")
+        }
 
     }
 

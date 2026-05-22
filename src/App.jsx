@@ -13,7 +13,7 @@ import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
 import Payment from './payment/Payment';
 import EditProfile from './components/User/EditProfile';
-import Checkout from './payment/Chekout';
+import Checkout from './payment/Checkout';
 import WishList from './WishList/WishList';
 import OrderSuccess from './payment/OrderSuccess';
 import Password from './components/Auth/Password';
@@ -64,7 +64,7 @@ function App() {
             <Route path='/editprofile' element={<EditProfile />} />
             <Route path='/password' element={<Password />} />
             <Route path="/cartlist" element={<CartList />} />
-            <Route path='/chekout' element={<Checkout />} />
+            <Route path='/checkout' element={<Checkout />} />
             <Route path='/payment' element={<Payment />} />
             <Route path='/ordersummary' element={<OrderSummary />} />
             <Route path='/orderlist' element={<OrderList />} />
@@ -88,13 +88,8 @@ function App() {
             <Route path='/admin/addbooks' element={<AddBooks />} />
             <Route path='/admin/aovchart' element={<AOVChart />} />
           </Route>
-
-
         </Route>
       </Routes>
-
-
-
     </div >
 
 

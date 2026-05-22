@@ -15,7 +15,7 @@ const Users = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const res = await api.get("/users")
+                const res = await api.get("/api/users/admin-users")
                 setUsers(res.data)
             } catch (err) {
                 console.error(err)
@@ -23,39 +23,26 @@ const Users = () => {
                 setLoading(false)
             }
         }
+        console.log(users);
 
         fetchUsers()
     }, [])
 
-    // 🔹 Delete user
-    // const deleteUser = async (id) => {
-    //     if (!confirm("Are you sure you want to delete this user?")) return
-
-    //     try {
-    //         await api.patch(`/users/${id}`)
-    //         setUsers(users.filter((u) => u.id !== id))
-    //     } catch (err) {
-    //         alert("Failed to delete user")
-    //     }
-    // }
-
-    // if (loading) {
-    //     return <p className="text-center mt-10">Loading users...</p>
-    // }
     // 🔹 Block / Unblock user
-    const toggleBlockUser = async (id, currentStatus) => {
+    const toggleBlockUser = async (_id, currentStatus) => {
         try {
-            await api.patch(`/users/${id}`, {
+            await api.patch(`/api/users/admin-status/${_id}`, {
                 isBlock: !currentStatus
             })
-
             setUsers(users.map((u) =>
-                u.id === id ? { ...u, isBlock: !currentStatus } : u
+                u._id === _id ? { ...u, isBlock: !currentStatus } : u
             ))
         } catch (err) {
             alert("Failed to update user status")
         }
     }
+    console.log(users)
+    console.log(users[2]?.isBlock);
 
 
     return (
@@ -81,7 +68,7 @@ const Users = () => {
 
                     <tbody>
                         {users.map((u) => (
-                            <tr key={u.id} className="border-t hover:bg-gray-50">
+                            <tr key={u._id} className="border-t hover:bg-gray-50">
                                 <td className="p-4 font-medium">{u.name}</td>
                                 <td className="p-4">{u.email}</td>
 
@@ -96,30 +83,19 @@ const Users = () => {
                                         {u.role}
                                     </span>
                                 </td>
-                                <td className={`font-semibold ${u.isBlock ? "text-red-600" : "text-green-600"}`}>
-                                    {u.isBlock ? "Blocked" : "Active"}
-                                </td>
-
-
-                                {/* <td className="p-4">
-                                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">
-                                        active
-                                    </span>
-                                </td> */}
+                                {u.role !== "admin" && (
+                                    <td className={`font-semibold ${u.isBlock ? "text-red-600" : "text-green-600"}`}>
+                                        {u.isBlock ? "Blocked" : "Active"}
+                                    </td>)}
 
                                 <td className="p-4 text-center space-x-3">
 
                                     {u.role !== "admin" && (
-                                        // <button
-                                        //     onClick={() => deleteUser(u.id)}
-                                        //     className="text-red-600 hover:text-red-800"
-                                        // >
-                                        //     <MdBlockFlipped />
-                                        // </button>
+
                                         <button
-                                            onClick={() => toggleBlockUser(u.id, u.isBlock)}
+                                            onClick={() => toggleBlockUser(u._id, u.isBlock)}
                                             className={`px-3 py-1 rounded text-white 
-        ${u.isBlock ? "bg-green-600" : "bg-red-600"}`}
+                                           ${u.isBlock ? "bg-green-600" : "bg-red-600"}`}
                                         >
                                             {u.isBlock ? "Unblock" : "Block"}
                                         </button>
