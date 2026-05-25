@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: import.meta.env.VITE_API_URL,
     timeout: 10000
 })
 api.interceptors.request.use((config) => {
@@ -16,5 +16,23 @@ api.interceptors.request.use((config) => {
     }
     return config
 })
+
+api.interceptors.response.use(
+
+    (response) => response,
+
+    (error) => {
+        if (error.response?.data?.isBlock) {
+
+            alert("Your Account is Blocked");
+
+            localStorage.removeItem("user");
+            localStorage.removeItem("token");
+
+            window.location.href = "/login";
+        }
+        return Promise.reject(error);
+    }
+);
 export default api;
 

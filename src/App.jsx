@@ -35,6 +35,7 @@ import AddBooks from './Admin/components/AddBooks';
 import AdminAuthGuard from './Admin/AdminAuthGuard';
 import AOVChart from './Admin/chart/AOVChart';
 import RevenueChart from './Admin/chart/RevenueChart';
+import Messages from './Admin/Messages';
 
 function App() {
   useEffect(() => {
@@ -58,6 +59,7 @@ function App() {
           <Route path='/bookdetailes/:id' element={<BookDetailes />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path="/admin/messages" element={<Messages />} />
           <Route element={<AuthGuard />}>
             <Route path='/profile' element={<Profile />} />
             <Route path='/addreslist' element={<AddresList />} />

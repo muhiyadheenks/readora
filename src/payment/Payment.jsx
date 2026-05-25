@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../components/Context/Cartcontext";
 import { useAuth } from "../components/Context/AuthContext";
@@ -13,16 +13,7 @@ function Payment() {
     const { orders, setOrders } = useOrder();
 
 
-    //preveent rerender rozerpay script
-    useEffect(() => {
-        const existingScript = document.getElementById('razorpay-script')
-        if (existingScript) return
 
-        const script = document.createElement('script')
-        script.src = 'https://checkout.razorpay.com/v2/checkout.js'
-        script.id = 'razorpay-script'
-        document.body.appendChild(script)
-    }, [])
 
 
     //handleRazorpay

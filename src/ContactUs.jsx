@@ -12,7 +12,7 @@ const ContactSchema = Yup.object({
 function ContactForm() {
     const handleSubmit = async (values, { resetForm }) => {
         try {
-            await api.post("/messages", values);
+            await api.post("/api/messages", values);
             alert("Message sent successfully");
             resetForm();
         } catch (error) {

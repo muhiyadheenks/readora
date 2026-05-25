@@ -1,4 +1,4 @@
-import { FaBox, FaSignOutAlt, FaTachometerAlt, FaUsers } from "react-icons/fa"
+import { FaBox, FaEnvelope, FaShoppingCart, FaSignOutAlt, FaTachometerAlt, FaUsers } from "react-icons/fa"
 import { NavLink, Outlet, useNavigate } from "react-router-dom"
 import { useAuth } from "../components/Context/AuthContext"
 
@@ -6,12 +6,22 @@ const AdminLayout = () => {
     const navigate = useNavigate()
     const { setUser } = useAuth()
 
-    const handleLogout = () => {
-        localStorage.removeItem("token")
-        setUser(null)
-        navigate("/admin", { replace: true })
-    }
+    // const handleLogout = () => {
+    //     localStorage.removeItem("token")
+    //     localStorage.removeItem("user");
 
+    //     setUser(null)
+    //     navigate("/admin", { replace: true })
+    // }
+    const handleLogout = () => {
+        localStorage.clear();
+
+        setUser(null);
+
+        navigate("/admin", { replace: true });
+
+        window.location.reload();
+    }
     return (
         <div className="flex">
             {/* Sidebar */}
@@ -50,6 +60,26 @@ const AdminLayout = () => {
                         }
                     >
                         <FaBox /> Books
+                    </NavLink>
+
+                    <NavLink
+                        to="/admin/adminorders"
+                        className={({ isActive }) =>
+                            `flex items-center gap-3 p-3 rounded-lg ${isActive ? "bg-gray-700" : "hover:bg-gray-800"
+                            }`
+                        }
+                    >
+                        <FaShoppingCart /> Orders
+                    </NavLink>
+
+                    <NavLink
+                        to="/admin/messages"
+                        className={({ isActive }) =>
+                            `flex items-center gap-3 p-3 rounded-lg ${isActive ? "bg-gray-700" : "hover:bg-gray-800"
+                            }`
+                        }
+                    >
+                        <FaEnvelope />  Messages
                     </NavLink>
                 </nav>
 
