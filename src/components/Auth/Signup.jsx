@@ -37,7 +37,7 @@ const Signup = () => {
             });
 
             if (result.success) {
-                alert("Registration successful! Please login.");
+                alert("Registration successful");
                 resetForm();
                 navigate("/");
             } else {

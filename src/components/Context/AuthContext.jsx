@@ -125,6 +125,7 @@ export const AuthProvider = ({ children }) => {
 
             const res = await api.post('/api/users/register', userData);
             localStorage.setItem("token", res.data.token)
+            localStorage.setItem("refreshToken", res.data.refreshToken)
 
             setUser(res.data.user)
             localStorage.setItem("user", JSON.stringify(res.data.user))
@@ -192,6 +193,8 @@ export const AuthProvider = ({ children }) => {
             setUser(res.data.user)
 
             localStorage.setItem("user", JSON.stringify(res.data.user))
+            localStorage.setItem("refreshToken", res.data.refreshToken)
+
             console.log(user, "user");
 
             return {
@@ -213,9 +216,7 @@ export const AuthProvider = ({ children }) => {
     /* ---------------- LOGOUT ---------------- */
     const logout = async () => {
         await api.post("/api/users/logout");
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
-        setUser(null);
+        localStorage.clear();
         navigate("/");
     };
 

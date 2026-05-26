@@ -18,19 +18,41 @@ api.interceptors.request.use((config) => {
 })
 
 api.interceptors.response.use(
-
     (response) => response,
+    async (error) => {
+        const originalRequest = error.config;
 
-    (error) => {
+        // Token expired
+        if (error.response?.data?.tokenExpired && !originalRequest._retry) {
+            originalRequest._retry = true;
+
+            const refreshToken = localStorage.getItem("refreshToken");
+
+            if (!refreshToken) {
+                localStorage.clear();
+                window.location.href = "/login";
+                return Promise.reject(error);
+            }
+
+            try {
+                const res = await api.post('/api/users/refresh-token', { refreshToken });
+                localStorage.setItem("token", res.data.token);
+                localStorage.setItem("refreshToken", res.data.refreshToken);
+                originalRequest.headers.Authorization = `Bearer ${res.data.token}`;
+                return api(originalRequest);
+            } catch (err) {
+                localStorage.clear();
+                window.location.href = "/login";
+                return Promise.reject(err);
+            }
+        }
+
         if (error.response?.data?.isBlock) {
-
             alert("Your Account is Blocked");
-
-            localStorage.removeItem("user");
-            localStorage.removeItem("token");
-
+            localStorage.clear();
             window.location.href = "/login";
         }
+
         return Promise.reject(error);
     }
 );
