@@ -214,21 +214,32 @@ export const AuthProvider = ({ children }) => {
     }
 
     /* ---------------- LOGOUT ---------------- */
-    const logout = async () => {
-        try {
-            await api.post("/api/users/logout");
-            localStorage.removeItem('token');
-            localStorage.removeItem('refreshToken');
-            localStorage.removeItem('user');
-            localStorage.removeItem('rzp_checkout_anon_id');
-            localStorage.clear();
+    // const logout = async () => {
+    //     try {
+    //         await api.post("/api/users/logout");
+    //         localStorage.removeItem('token');
+    //         localStorage.removeItem('refreshToken');
+    //         localStorage.removeItem('user');
+    //         localStorage.removeItem('rzp_checkout_anon_id');
+    //         localStorage.clear();
 
-            navigate("/");
+    //         navigate("/");
 
-        } catch (err) {
-            console.log("Logout API failed, clearing anyway");
-        }
+    //     } catch (err) {
+    //         console.log("Logout API failed, clearing anyway");
+    //     }
+    // };
+    const logout = () => {
+        await api.post("/api/users/logout");
+        localStorage.removeItem('token');
+        localStorage.removeItem('refreshToken');
+        localStorage.removeItem("user");
+        localStorage.removeItem('rzp_checkout_anon_id');
+
+        setUser(null);
+        navigate("/");
     };
+
     //update profile
     const updateProfile = async (updatedData) => {
         try {
