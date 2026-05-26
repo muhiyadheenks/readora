@@ -2,12 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { IoIosSearch } from "react-icons/io";
 import { IoPersonCircle } from "react-icons/io5";
 import Darkmode from './Darkmode';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Context/AuthContext';
 import { useCart } from '../Context/Cartcontext';
 import { FaCartShopping, FaHeart } from 'react-icons/fa6';
 import { useWishList } from '../Context/WishListContext';
-
+import { HiMenu, HiX } from 'react-icons/hi';
 
 const navbar = [
     { id: "6817", name: "Home", path: "/" },
@@ -16,7 +16,6 @@ const navbar = [
     { id: "76ae", name: "Contact Us", path: "/contactus" }
 ];
 
-
 function Navbar() {
     const { wishList } = useWishList();
     const { cart } = useCart();
@@ -24,8 +23,9 @@ function Navbar() {
     const dropdownRef = useRef(null);
     const navigate = useNavigate();
     const [open, setOpen] = useState(false);
-    const [searchTerm, setSearchTerm] = useState('')
-    // close dropdown on outside click
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+
     useEffect(() => {
         const handler = (e) => {
             if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -48,8 +48,6 @@ function Navbar() {
         }
     };
 
-
-
     return (
         <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white sticky top-0 z-40">
 
@@ -58,7 +56,7 @@ function Navbar() {
                 <div className="container mx-auto flex justify-between items-center px-4">
 
                     {/* logo */}
-                    <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2 ">
+                    <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2 items-center">
                         <img
                             onClick={() => navigate('/')}
                             className="w-10 cursor-pointer rounded-full"
@@ -69,10 +67,10 @@ function Navbar() {
                     </a>
 
                     {/* right section */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-3">
 
-                        {/* search */}
-                        <div className="relative group hidden sm:block border-null">
+                        {/* search - hidden on mobile */}
+                        <div className="relative group hidden sm:block">
                             <input
                                 type="text"
                                 value={searchTerm}
@@ -81,15 +79,13 @@ function Navbar() {
                                 placeholder="Search books..."
                                 className='rounded-full p-1 pl-3 pr-10 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 w-48 group-hover:w-64'
                             />
-
-                            <IoIosSearch
-
-                                className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 text-2xl " />
+                            <IoIosSearch className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 text-2xl" />
                         </div>
+
                         {/* wishlist */}
                         {user &&
                             <button onClick={() => navigate("/wishlist")}
-                                className='relative bg-gradient-to-r from-primary to-secondary text-white py-1 px-4 rounded-full flex items-center gap-2'>
+                                className='relative bg-gradient-to-r from-primary to-secondary text-white py-1 px-3 rounded-full flex items-center gap-2'>
                                 <FaHeart />
                                 {wishList.length > 0 && (
                                     <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
@@ -101,9 +97,8 @@ function Navbar() {
 
                         {/* cart */}
                         {user &&
-                            <button className="relative bg-gradient-to-r from-primary to-secondary text-white py-1 px-4 rounded-full flex items-center gap-2">
-                                <FaCartShopping onClick={() => navigate("/cartlist")}
-                                    className="relative text-xl " />
+                            <button className="relative bg-gradient-to-r from-primary to-secondary text-white py-1 px-3 rounded-full flex items-center gap-2">
+                                <FaCartShopping onClick={() => navigate("/cartlist")} className="text-xl" />
                                 {cart.items?.length > 0 && (
                                     <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                                         {cart.items?.length}
@@ -119,20 +114,14 @@ function Navbar() {
                                     className="text-4xl cursor-pointer text-primary"
                                     onClick={() => setOpen(!open)}
                                 />
-
-                                {/* dropdown */}
                                 {open && (
                                     <div className="absolute right-0 mt-2 w-44 bg-white dark:bg-gray-800 rounded-xl shadow-lg border dark:border-gray-700 overflow-hidden">
                                         <button
-                                            onClick={() => {
-                                                navigate('/profile');
-                                                setOpen(false);
-                                            }}
+                                            onClick={() => { navigate('/profile'); setOpen(false); }}
                                             className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
                                         >
                                             Profile
                                         </button>
-
                                         <button
                                             onClick={handleLogout}
                                             className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/30"
@@ -152,13 +141,36 @@ function Navbar() {
                         )}
 
                         <Darkmode />
+
+                        {/* Hamburger - mobile only */}
+                        <button
+                            className="sm:hidden text-2xl"
+                            onClick={() => setMenuOpen(!menuOpen)}
+                        >
+                            {menuOpen ? <HiX /> : <HiMenu />}
+                        </button>
+                    </div>
+                </div>
+
+                {/* Mobile Search */}
+                <div className="sm:hidden px-4 pt-2">
+                    <div className="relative">
+                        <input
+                            type="text"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            onKeyDown={handleKeyDown}
+                            placeholder="Search books..."
+                            className='w-full rounded-full p-1 pl-3 pr-10 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary'
+                        />
+                        <IoIosSearch className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 text-2xl" />
                     </div>
                 </div>
             </div>
 
-            {/* lower navbar */}
-            <div className="flex justify-center bg-white dark:bg-gray-900">
-                <ul className="sm:flex hidden gap-4">
+            {/* Desktop lower navbar */}
+            <div className="hidden sm:flex justify-center bg-white dark:bg-gray-900">
+                <ul className="flex gap-4">
                     {navbar.map((item) => (
                         <li key={item.id}>
                             <button
@@ -169,17 +181,28 @@ function Navbar() {
                             </button>
                         </li>
                     ))}
-
                 </ul>
             </div>
+
+            {/* Mobile Menu */}
+            {menuOpen && (
+                <div className="sm:hidden bg-white dark:bg-gray-900 px-4 pb-4">
+                    <ul className="flex flex-col gap-2">
+                        {navbar.map((item) => (
+                            <li key={item.id}>
+                                <button
+                                    onClick={() => { navigate(item.path); setMenuOpen(false); }}
+                                    className="w-full text-left px-4 py-2 text-sm hover:text-primary font-bold"
+                                >
+                                    {item.name}
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
     );
 }
 
 export default Navbar;
-
-
-
-
-
-
