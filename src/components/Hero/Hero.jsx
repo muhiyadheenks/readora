@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Context/AuthContext'
 import api from '../../API/Axios';
 
-
 function Hero() {
     const settings = {
         dots: false,
@@ -22,59 +21,65 @@ function Hero() {
     const [hero, setHero] = useState([]);
     const { user } = useAuth();
     const navigate = useNavigate()
+
     useEffect(() => {
         api.get("/api/hero")
             .then((res) => setHero(res.data))
             .catch((err) => console.error(err));
     }, [])
-    console.log(hero);
 
     return (
-        <div className='relative overflow-hidden min-h-screen sm:min-h-[650px] bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200 '>
+        <div className='relative overflow-hidden min-h-[500px] sm:min-h-[650px] bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200'>
             {/* background pattern */}
             <div className='min-h-full w-[700px] bg-primary/40 absolute -top-1/2 right-0 rounded-3xl rotate-45 z-0 shadow-2xl'></div>
             {/* hero section */}
-            <div className='container pb-8 sm:pb-0'>
+            <div className='container px-4 pb-8 sm:pb-0'>
                 <Slider {...settings}>
                     {hero?.map((item) => (
-
                         <div key={item.id}>
-                            <div className='grid grid-cols-1 sm:grid-cols-2 '>
-                                {/* content section */}
-                                <div className='flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1 relative z-10'>
-                                    <h1 data-aos="zoom-out"
-                                        data-aos-once="true"
-                                        data-aos-duration="500"
-                                        className='text-5xl sm:text-6xl lg:text-7xl font-bold'>{item.title}</h1>
-                                    <p
-                                        data-aos="fade-up"
-                                        data-aos-once="true"
-                                        data-aos-delay="100" className='text-sm'>{item.description}</p>
-
-                                    <div data-aos="fade-up"
-                                        data-aos-once="true"
-                                        data-aos-delay="300">
-                                        {user ? <h1 className='flex justify-center bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full font-thin text-4xl w-auto'>
-                                            Welcome {user.name}
-                                        </h1>
-                                            : <button onClick={() => navigate('/signup')} className='bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full'>
-                                                Register Now
-                                            </button>}
-                                    </div>
-
-                                </div>
-                                {/* image section */}
-                                <div className='order-1 sm:order-2'>
-                                    <div data-aos="zoom-in"
-                                        data-aos-once="true"
-                                        className='relative z-10'>
+                            <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                                {/* image section - mobile top */}
+                                <div className='order-1 sm:order-2 flex justify-center'>
+                                    <div data-aos="zoom-in" data-aos-once="true" className='relative z-10'>
                                         <img
                                             src={item.img}
                                             alt={item.title}
                                             onError={(e) => (e.target.src = "/hero/image1.webp")}
-
-
-                                            className='w-[300px] h-[300px] sm:h-[450px] sm:w-[450px] sm:scale-125 object-contain mx-auto' />
+                                            className='w-[220px] h-[220px] sm:h-[450px] sm:w-[450px] sm:scale-125 object-contain mx-auto'
+                                        />
+                                    </div>
+                                </div>
+                                {/* content section */}
+                                <div className='flex flex-col justify-center gap-4 text-center sm:text-left order-2 sm:order-1 relative z-10'>
+                                    <h1
+                                        data-aos="zoom-out"
+                                        data-aos-once="true"
+                                        data-aos-duration="500"
+                                        className='text-3xl sm:text-6xl lg:text-7xl font-bold'
+                                    >
+                                        {item.title}
+                                    </h1>
+                                    <p
+                                        data-aos="fade-up"
+                                        data-aos-once="true"
+                                        data-aos-delay="100"
+                                        className='text-sm text-gray-600 dark:text-gray-300'
+                                    >
+                                        {item.description}
+                                    </p>
+                                    <div data-aos="fade-up" data-aos-once="true" data-aos-delay="300">
+                                        {user ? (
+                                            <h1 className='bg-gradient-to-r from-primary to-secondary text-white py-2 px-4 rounded-full font-thin text-2xl sm:text-4xl'>
+                                                Welcome {user.name}
+                                            </h1>
+                                        ) : (
+                                            <button
+                                                onClick={() => navigate('/signup')}
+                                                className='bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full'
+                                            >
+                                                Register Now
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                             </div>
