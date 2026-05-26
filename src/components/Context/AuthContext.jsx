@@ -229,7 +229,7 @@ export const AuthProvider = ({ children }) => {
     //         console.log("Logout API failed, clearing anyway");
     //     }
     // };
-    const logout = () => {
+    const logout = async () => {
         await api.post("/api/users/logout");
         localStorage.removeItem('token');
         localStorage.removeItem('refreshToken');
