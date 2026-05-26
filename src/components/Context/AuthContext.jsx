@@ -215,11 +215,15 @@ export const AuthProvider = ({ children }) => {
 
     /* ---------------- LOGOUT ---------------- */
     const logout = async () => {
-        await api.post("/api/users/logout");
-        localStorage.clear();
-        navigate("/");
+        try {
+            await api.post("/api/users/logout");
+        } catch (err) {
+            console.log("Logout API failed, clearing anyway");
+        } finally {
+            localStorage.clear();
+            navigate("/");
+        }
     };
-
     //update profile
     const updateProfile = async (updatedData) => {
         try {
