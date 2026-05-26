@@ -217,11 +217,16 @@ export const AuthProvider = ({ children }) => {
     const logout = async () => {
         try {
             await api.post("/api/users/logout");
+            localStorage.removeItem('token');
+            localStorage.removeItem('refreshToken');
+            localStorage.removeItem('user');
+            localStorage.removeItem('rzp_checkout_anon_id');
+            localStorage.clear();
+
+            navigate("/");
+
         } catch (err) {
             console.log("Logout API failed, clearing anyway");
-        } finally {
-            localStorage.clear();
-            navigate("/");
         }
     };
     //update profile
