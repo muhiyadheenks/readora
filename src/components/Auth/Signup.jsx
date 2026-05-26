@@ -39,7 +39,7 @@ const Signup = () => {
             if (result.success) {
                 alert("Registration successful! Please login.");
                 resetForm();
-                navigate("/login");
+                navigate("/");
             } else {
                 setError(result.error);
             }
