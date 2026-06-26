@@ -43,70 +43,78 @@ function Books() {
     const totalpages = Math.ceil(books.length / itemsperpage)
 
     return (
-        <div className='mt-14 mb-12 '>
+        <div className='mt-14 mb-12'>
             <div className='container'>
                 {/* header section */}
-                <div className='text-center mb-10 max-w-[600px] max-auto w-fit m-auto'>
-                    <h1 data-aos="fade-up" className='text-3xl font-bold text-primary '>Books</h1>
-                    <p className='text-xs text-gray-400'>"Discover books that inspire, educate, and transport you to new worlds.Readora is your modern home for stories, knowledge, and imagination.</p>
-
+                <div className='text-center mb-14 max-w-[600px] mx-auto'>
+                    <h1 data-aos="fade-up" className='text-4xl font-extrabold text-gradient mb-4 drop-shadow-[0_0_10px_rgba(108,99,255,0.3)]'>
+                        Books
+                    </h1>
+                    <p data-aos="fade-up" data-aos-delay="100" className='text-sm text-textSecondary'>
+                        Discover books that inspire, educate, and transport you to new worlds. Readora is your modern home for stories, knowledge, and imagination.
+                    </p>
                 </div>
-                {/* body section */}
 
-                <div className='grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-5  '>
+                {/* body section */}
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 place-items-center'>
                     {/* card section */}
                     {currentitems.map((book) => (
-
-                        < Link key={book._id} to={`/bookdetailes/${book._id}`}   >
+                        <Link key={book._id} to={`/bookdetailes/${book._id}`} className='w-full flex justify-center'>
                             <div
                                 data-aos="fade-up"
                                 data-aos-delay={book.aosDelay}
-                                className='space-y-3 p-10 cursor-pointer'>
-                                {book.img ? (
-                                    <img src={book.img}
-                                        className='h-[220px] w-[150px] object-cover rounded-md'
-                                        alt={book.type} />) : (<div className="h-[220px] w-[150px] bg-gray-200 flex items-center justify-center rounded-md">
-
+                                className='group bg-dark-card border border-dark-border p-5 rounded-2xl w-full max-w-[260px] h-full hover:-translate-y-2 hover:border-primary hover:shadow-[0_10px_30px_rgba(108,99,255,0.2)] transition-all duration-300 flex flex-col items-center text-center cursor-pointer'
+                            >
+                                <div className="relative mb-5 overflow-visible">
+                                    {book.img ? (
+                                        <img src={book.img}
+                                            className='h-[200px] w-[140px] object-cover rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.5)] group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(108,99,255,0.5)] transition-all duration-500'
+                                            alt={book.type} 
+                                        />
+                                    ) : (
+                                        <div className="h-[200px] w-[140px] bg-dark-border text-textSecondary flex items-center justify-center rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-all duration-500">
                                             No Image
-                                        </div>)
-                                }
-                                <div>
-                                    <h1 className='font-bold'>{book.title}-<span className="text-sm text-gray-500 font-light">{book.author}</span></h1>
-                                    <h3 className='text-sm text-gray-800 font-bold'>₹ {book.price}</h3>
-                                    <p className='text-sm text-gray-600'>{book.description}</p>
-                                    <div className='flex justify-center gap-1 '>
-                                        <FaStar className="text-yellow-400" />
-                                        <span>{book.rating}</span>
-
+                                        </div>
+                                    )}
+                                </div>
+                                
+                                <div className="flex flex-col flex-grow w-full">
+                                    <h1 className='font-bold text-lg text-textPrimary mb-1 line-clamp-1 group-hover:text-secondary transition-colors duration-300'>
+                                        {book.title}
+                                    </h1>
+                                    <span className="text-sm text-textSecondary font-medium mb-2 line-clamp-1">by {book.author}</span>
+                                    <h3 className='text-lg text-primary font-bold mb-2'>₹ {book.price}</h3>
+                                    <p className='text-xs text-textSecondary mb-4 line-clamp-2'>{book.description}</p>
+                                    
+                                    <div className='flex justify-center items-center gap-2 mt-auto bg-dark-bg py-1.5 px-3 rounded-full border border-dark-border mx-auto w-fit'>
+                                        <FaStar className="text-yellow-400 drop-shadow-[0_0_5px_rgba(250,204,21,0.5)]" />
+                                        <span className="text-sm font-semibold text-textPrimary">{book.rating}</span>
                                     </div>
                                 </div>
-
                             </div>
                         </Link>
                     ))}
                 </div>
-                <div className="flex justify-center gap-3 mt-10">
+
+                {/* pagination */}
+                <div className="flex justify-center gap-3 mt-14">
                     {[...Array(totalpages)].map((_, index) => (
                         <button
                             key={index}
                             onClick={() => setCurrentpage(index + 1)}
-                            className={`px-3 py-1 rounded ${currentpage === index + 1
-                                ? 'bg-primary text-white'
-                                : 'bg-gray-300'
-                                }`}
+                            className={`w-10 h-10 rounded-full font-medium transition-all duration-300 ${
+                                currentpage === index + 1
+                                    ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-[0_0_15px_rgba(108,99,255,0.5)]'
+                                    : 'bg-dark-card border border-dark-border text-textSecondary hover:border-primary hover:text-primary'
+                            }`}
                         >
                             {index + 1}
                         </button>
                     ))}
                 </div>
-
             </div>
-        </div >
+        </div>
     )
 }
 
-export default Books
-
-
-
-
+export default Books;

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { IoIosSearch } from "react-icons/io";
 import { IoPersonCircle } from "react-icons/io5";
-import Darkmode from './Darkmode';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Context/AuthContext';
 import { useCart } from '../Context/Cartcontext';
@@ -49,17 +48,17 @@ function Navbar() {
     };
 
     return (
-        <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white sticky top-0 z-40">
+        <div className="bg-glass sticky top-0 z-40 transition-all duration-300">
 
             {/* upper navbar */}
-            <div className="bg-primary/40 py-2">
+            <div className="py-3">
                 <div className="container mx-auto flex justify-between items-center px-4">
 
                     {/* logo */}
-                    <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2 items-center">
+                    <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2 items-center text-gradient drop-shadow-[0_0_10px_rgba(108,99,255,0.5)]">
                         <img
                             onClick={() => navigate('/')}
-                            className="w-10 cursor-pointer rounded-full"
+                            className="w-10 cursor-pointer rounded-full shadow-[0_0_15px_rgba(108,99,255,0.6)]"
                             src="/images/logo1.png"
                             alt="logo"
                         />
@@ -67,7 +66,7 @@ function Navbar() {
                     </a>
 
                     {/* right section */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-4">
 
                         {/* search - hidden on mobile */}
                         <div className="relative group hidden sm:block">
@@ -77,18 +76,18 @@ function Navbar() {
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 onKeyDown={handleKeyDown}
                                 placeholder="Search books..."
-                                className='rounded-full p-1 pl-3 pr-10 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 w-48 group-hover:w-64'
+                                className='rounded-full p-2 pl-4 pr-10 bg-dark-card border border-dark-border text-textPrimary placeholder:text-textSecondary focus:outline-none focus:border-secondary focus:shadow-[0_0_10px_#00d4ff] transition-all duration-300 w-48 group-hover:w-64'
                             />
-                            <IoIosSearch className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 text-2xl" />
+                            <IoIosSearch className="absolute top-1/2 right-3 -translate-y-1/2 text-textSecondary text-2xl group-hover:text-secondary transition-colors duration-300" />
                         </div>
 
                         {/* wishlist */}
                         {user &&
                             <button onClick={() => navigate("/wishlist")}
-                                className='relative bg-gradient-to-r from-primary to-secondary text-white py-1 px-3 rounded-full flex items-center gap-2'>
-                                <FaHeart />
+                                className='relative bg-dark-card border border-dark-border hover:border-primary hover:shadow-[0_0_15px_rgba(108,99,255,0.4)] text-primary hover:text-white py-2 px-3 rounded-full flex items-center gap-2 transition-all duration-300 group'>
+                                <FaHeart className="group-hover:drop-shadow-[0_0_5px_#ffffff]" />
                                 {wishList.length > 0 && (
-                                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                                    <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full shadow-[0_0_10px_#6c63ff]">
                                         {wishList.length}
                                     </span>
                                 )}
@@ -97,10 +96,11 @@ function Navbar() {
 
                         {/* cart */}
                         {user &&
-                            <button className="relative bg-gradient-to-r from-primary to-secondary text-white py-1 px-3 rounded-full flex items-center gap-2">
-                                <FaCartShopping onClick={() => navigate("/cartlist")} className="text-xl" />
+                            <button onClick={() => navigate("/cartlist")}
+                                className='relative bg-dark-card border border-dark-border hover:border-primary hover:shadow-[0_0_15px_rgba(108,99,255,0.4)] text-primary hover:text-white py-2 px-3 rounded-full flex items-center gap-2 transition-all duration-300 group'>
+                                <FaCartShopping className="text-xl group-hover:drop-shadow-[0_0_5px_#ffffff]" />
                                 {cart.items?.length > 0 && (
-                                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                                    <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full shadow-[0_0_10px_#6c63ff]">
                                         {cart.items?.length}
                                     </span>
                                 )}
@@ -111,20 +111,20 @@ function Navbar() {
                         {user ? (
                             <div className="relative" ref={dropdownRef}>
                                 <IoPersonCircle
-                                    className="text-4xl cursor-pointer text-primary"
+                                    className="text-4xl cursor-pointer text-primary hover:text-secondary hover:drop-shadow-[0_0_10px_#00d4ff] transition-all duration-300"
                                     onClick={() => setOpen(!open)}
                                 />
                                 {open && (
-                                    <div className="absolute right-0 mt-2 w-44 bg-white dark:bg-gray-800 rounded-xl shadow-lg border dark:border-gray-700 overflow-hidden">
+                                    <div className="absolute right-0 mt-3 w-48 bg-dark-card rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-dark-border overflow-hidden">
                                         <button
                                             onClick={() => { navigate('/profile'); setOpen(false); }}
-                                            className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+                                            className="w-full text-left px-4 py-3 text-sm text-textPrimary hover:bg-primary/20 hover:text-secondary transition-colors duration-200"
                                         >
                                             Profile
                                         </button>
                                         <button
                                             onClick={handleLogout}
-                                            className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/30"
+                                            className="w-full text-left px-4 py-3 text-sm text-red-500 hover:bg-red-500/10 hover:text-red-400 transition-colors duration-200"
                                         >
                                             Logout
                                         </button>
@@ -134,17 +134,15 @@ function Navbar() {
                         ) : (
                             <button
                                 onClick={() => navigate('/login')}
-                                className="bg-gradient-to-r from-primary to-secondary text-white py-1 px-4 rounded-full"
+                                className="bg-gradient-to-r from-primary to-secondary hover:shadow-[0_0_20px_rgba(108,99,255,0.6)] text-white font-medium py-2 px-6 rounded-full hover:scale-105 transition-all duration-300"
                             >
-                                Signin
+                                Sign In
                             </button>
                         )}
 
-                        <Darkmode />
-
                         {/* Hamburger - mobile only */}
                         <button
-                            className="sm:hidden text-2xl"
+                            className="sm:hidden text-2xl text-textPrimary hover:text-secondary transition-colors duration-200"
                             onClick={() => setMenuOpen(!menuOpen)}
                         >
                             {menuOpen ? <HiX /> : <HiMenu />}
@@ -153,31 +151,32 @@ function Navbar() {
                 </div>
 
                 {/* Mobile Search */}
-                <div className="sm:hidden px-4 pt-2">
-                    <div className="relative">
+                <div className="sm:hidden px-4 pt-4 pb-2">
+                    <div className="relative group">
                         <input
                             type="text"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             onKeyDown={handleKeyDown}
                             placeholder="Search books..."
-                            className='w-full rounded-full p-1 pl-3 pr-10 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary'
+                            className='w-full rounded-full p-2 pl-4 pr-10 bg-dark-card border border-dark-border text-textPrimary placeholder:text-textSecondary focus:outline-none focus:border-secondary focus:shadow-[0_0_10px_#00d4ff] transition-all duration-300'
                         />
-                        <IoIosSearch className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 text-2xl" />
+                        <IoIosSearch className="absolute top-1/2 right-3 -translate-y-1/2 text-textSecondary text-2xl group-focus-within:text-secondary transition-colors duration-300" />
                     </div>
                 </div>
             </div>
 
             {/* Desktop lower navbar */}
-            <div className="hidden sm:flex justify-center bg-white dark:bg-gray-900">
-                <ul className="flex gap-4">
+            <div className="hidden sm:flex justify-center pb-3">
+                <ul className="flex gap-8">
                     {navbar.map((item) => (
                         <li key={item.id}>
                             <button
                                 onClick={() => navigate(item.path)}
-                                className="px-4 py-2 text-sm hover:text-primary font-bold"
+                                className="relative text-sm text-textSecondary hover:text-white font-medium transition-colors duration-300 group py-1"
                             >
                                 {item.name}
+                                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_#00d4ff]"></span>
                             </button>
                         </li>
                     ))}
@@ -186,13 +185,13 @@ function Navbar() {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="sm:hidden bg-white dark:bg-gray-900 px-4 pb-4">
-                    <ul className="flex flex-col gap-2">
+                <div className="sm:hidden bg-dark-card/95 backdrop-blur-md px-4 pb-4 border-t border-dark-border absolute w-full shadow-2xl">
+                    <ul className="flex flex-col gap-2 pt-4">
                         {navbar.map((item) => (
                             <li key={item.id}>
                                 <button
                                     onClick={() => { navigate(item.path); setMenuOpen(false); }}
-                                    className="w-full text-left px-4 py-2 text-sm hover:text-primary font-bold"
+                                    className="w-full text-left px-4 py-3 text-sm text-textSecondary hover:text-secondary hover:bg-primary/10 rounded-lg font-medium transition-all duration-300"
                                 >
                                     {item.name}
                                 </button>

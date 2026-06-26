@@ -5,8 +5,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#27c1f5",
-        secondary: "#251530",
+        primary: "#6c63ff",
+        secondary: "#00d4ff",
+        dark: {
+          bg: "#0a0a0f",
+          card: "#12121a",
+          border: "#1e1e2e",
+        },
+        textPrimary: "#ffffff",
+        textSecondary: "#a0a0b0",
+      },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
       },
       container: {
         center: true,
@@ -18,5 +28,4 @@ export default {
     },
   },
   plugins: [],
-
 };

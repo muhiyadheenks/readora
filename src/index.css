@@ -1,4 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
- @tailwind base;
- @tailwind components;
- @tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-inter bg-dark-bg text-textPrimary antialiased selection:bg-primary/30 selection:text-white transition-colors duration-300;
+  }
+}
+
+/* Custom Utilities that might be handy */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+  .bg-glass {
+    @apply bg-[#0a0a0f]/80 backdrop-blur-md border-b border-dark-border;
+  }
+}
