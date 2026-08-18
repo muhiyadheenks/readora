@@ -33,11 +33,11 @@ function Hero() {
             {/* Glowing background orbs for subtle premium feel */}
             <div className='absolute top-[-20%] left-[-10%] w-[40vw] h-[40vw] bg-primary/20 rounded-full blur-[120px] z-0'></div>
             <div className='absolute bottom-[-20%] right-[-10%] w-[30vw] h-[30vw] bg-secondary/20 rounded-full blur-[100px] z-0'></div>
-            
+
             {/* hero section */}
             <div className='container px-4 pb-8 sm:pb-0 z-10'>
                 <Slider {...settings}>
-                    {hero?.map((item) => (
+                    {Array.isArray(hero) && hero.map((item) => (
                         <div key={item.id}>
                             <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 items-center'>
                                 {/* content section */}
@@ -90,7 +90,7 @@ function Hero() {
                     ))}
                 </Slider>
             </div>
-            
+
             <style jsx>{`
                 @keyframes float {
                     0% { transform: translateY(0px); }
